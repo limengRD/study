@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>完善资料</title>
+</head>
+<body>
+	<form action="index.html" method="get">
+		<fieldset>
+			<legend>个人信息完善</legend>
+			<p>
+				<label>
+					个人年龄：
+					<input type="number" name="age" placeholder="请在此输入年龄">
+				</label>
+			</p>
+			<p>
+				<label for="phone">手机号码:</label>
+					<input type="tel" name="phone" id="phone" placeholder="请在此输入手机号" require="required"/>
+			</p>
+			<p>
+				<label for="site">个人网站:</label>
+					<input type="url" name="site" id="site" placeholder="请在此输入个人网站地址"/>
+			</p>
+			<p>
+				<label>开发方向:
+					<input type="text" placeholder="请选择技能方向" list="tec" />
+				</label>
+				<datalist id="tec">
+					<option>前端开发</option>
+					<option>后端开发</option>
+					<option>UI设计</option>
+					<option>游戏开发</option>
+					<option>软件测试</option>
+				</datalist>
+			</p>
+			<p>
+				<label>
+					毕业时间:
+					<input type="date" name="by" />
+				</label>
+			</p>
+			<input type="submit" value="保存" />&nbsp;
+			<input type="reset" value="重置" />
+		</fieldset>
+	</form>
+</body>
+</html>
