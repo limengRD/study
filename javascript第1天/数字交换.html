@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var iFirstNum = 5;
+    var iSeconNum = 6;
+//    借用第三个临时变量
+//    var temp;
+//    temp = iFirstNum;
+//    iFirstNum = iSeconNum;
+//    iSeconNum = temp;
+//    console.log(iFirstNum,iSeconNum);
+
+
+//    不借用第三个变量
+    iFirstNum = iFirstNum + iSeconNum;//11
+    iSeconNum = iFirstNum - iSeconNum;//11 - 6 = 5
+    iFirstNum = iFirstNum - iSeconNum;//11 - 5 = 6
+    console.log(iFirstNum,iSeconNum);
+</script>
+</body>
+</html>

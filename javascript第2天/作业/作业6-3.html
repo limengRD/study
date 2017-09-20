@@ -1,0 +1,29 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>分支结构作业</title>
+</head>
+
+<body>
+  <script>
+    // 判断一个年份是闰年还是平年
+    // 提示:闰年：能被4整除，但不能被100整除的年份 或者 能被400整除的年份
+ 	var num = 2000;
+ 	var a = ((num%4 ==0) && (num%100 != 0) || (num%400 ==0));
+ 	switch (a) {
+ 		case true:
+ 			console.log("闰年");
+ 			break;
+ 		default:
+ 			console.log("平年");
+ 			break;
+ }
+  </script>
+</body>
+
+</html>
