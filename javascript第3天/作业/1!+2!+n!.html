@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function purAdd (n) {
+			
+			var	sum = 0; 
+			var pur = 1;
+			for(var i = 1 ; i<=n ; i++ ) {
+	
+					pur *= i; // pur =1 ; pur = 2 ;
+					sum += pur; //sum=1 ; sum = 3;
+	
+		
+			}
+			return sum;
+		}
+		console.log(purAdd(4));
+	</script>
+
+</body>
+</html>

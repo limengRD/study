@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		    // 1.求50-200直接能被7整除的数
+		    // for (var i = 50; i< 200; i++){
+		    // 	if (i % 7 == 0 ){
+		    // 		console.log(i);
+		    // 直接跳出整个循环
+		    // 		break;
+		    // 	}
+		    // }
+		   // 求整数 1-100 的累加值，单要求跳过所有有个位为3的数
+		   var sum = 0;
+		   for (var i =1 ; i<= 100; i++){
+		   	if (i% 10 == 3){
+		   		// 跳出本次循环直接开始下次循环
+		   		continue;
+		   	}
+		   	sum+=i;
+		   }
+		   console.log(sum);
+	</script>
+</body>
+</html>

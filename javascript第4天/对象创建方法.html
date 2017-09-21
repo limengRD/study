@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 对象字面量
+		// var a = {
+		// 	name: 'a';
+		// 	......
+		// }
+
+		//// new Object()
+		// var person = new Object();
+		// person.name = 'shiyang';
+		// person.age = 17;
+		// person.sex = '男';
+		// person.skill = function() {
+		// 	console.log('aaa')
+		// }
+		// console.log(person);
+
+		// 工厂方法创建对象
+		// function createPerson(name,age,sex,color,skill){
+		// 	var person = new Object();
+		// 	person.name = name;
+		// 	person.age = age;
+		// 	person.sex = sex;
+		// 	person.color = color;
+		// 	person.skill = function() {
+		// 		console.log(skill);
+		// 	}
+		// 	return person;
+		// }
+		// var liubei = createPerson('刘备',40,'男','yellow','哭');
+
+
+		function Person (name,age,sex,color,skill) {
+			this.name = name;
+			this.age = age;
+			this.sex = sex;
+			this.color = color;
+			this.skill = function() {
+				console.log(skill);
+			}
+		}
+		var caocao = new Person('曹操',32,'男','white','计谋');
+		console.log(caocao);
+	</script>
+</body>
+</html>

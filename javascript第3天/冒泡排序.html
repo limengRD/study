@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		var arr = [12,23,1,45,63,34,6,111,77];
+ 		// 因为每走一趟 就会选出一个最大的数 所以总的趟数就是总的长度减1
+		for (var i = 0 ; i < arr.length-1 ; i++) {	
+			// 因为每一次循环都会选出一个最大的值方到数组的最后面 所以下次循环就不用再次判断最后面的最大值 
+			for (var j = 0 ; j < arr.length-1-i ; j++) {
+				// 判断第一个跟第二个之间的大小如果前面的比后面还打就交换两个值 然后j+1 就开始判断第二个数和第三个数的大小 以此类推
+				if (arr[j] > arr[j+1]){
+					var temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+				}	
+			}
+		}
+		console.log(arr);
+	</script>
+</body>
+</html>

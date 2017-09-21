@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function oneNumber (num) {
+			if (num == 1 || num == 2){
+				console.log(num + ':是素数');
+				return;
+			}
+			for (var i = 2 ; i < num ; i++){
+				if (num % i == 0){
+					console.log(num + ':不是素数');
+					return;
+				}
+			}
+			console.log(num + ':是素数');
+		}
+
+		oneNumber(2);
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj ={
+        	name: 'zs',
+        	age:18,
+        	sayHi:function(){
+          	console.log('Hi');
+        	}
+     	 }
+     	 delete obj.name;
+     	 var str = '';
+     	for (var k in obj) {
+     		str += k + ':' +obj[k] + '\n';
+     	}
+     	console.log(str);
+	</script>
+</body>
+</html>

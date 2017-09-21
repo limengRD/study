@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function minNumber (arr) {
+			var minNum = arr[0];
+			for (var i = 1 ; i< arr.length; i++){
+				if (arr[i] < minNum) {
+					minNum = arr[i];
+				}
+			}
+			return minNum;
+		}
+		console.log(minNumber([12,3,42,234]));
+
+	</script>
+</body>
+</html>

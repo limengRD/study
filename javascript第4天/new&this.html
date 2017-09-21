@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// function NewObject (name,age,sex,skill){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.sex = sex;
+		// 	this.skill = function() {
+		// 		console.log(skill);
+		// 	}
+		// }
+		// var object1 = new NewObject('shiyang','12','男','qwer');
+		// console.log(object1.name);
+
+
+	 // function a () {
+	 // 	console.log(this);
+	 // }
+	 // a();
+
+	 // var b = {
+	 // 	theThis:function() {
+	 // 		name: 'shiyang',
+	 // 		console.log(this);
+	 // 	}
+	 // }
+	 // console.log(b.theThis)
+	 function Person (name,sex) {
+	 	this.name = name;
+	 	this.sex = sex;
+	 	this.skill = function() {
+	 		console.log(this);
+	 	}
+	 }
+	 var shiyang = new Person('shiyang','nan');
+		shiyang.skill();
+	</script>
+</body>
+</html>

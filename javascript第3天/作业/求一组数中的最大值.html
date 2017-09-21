@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function maxNumber (arr) {
+			var maxNum = arr[0];
+			for (var i = 1 ; i< arr.length; i++){
+				if (arr[i] > maxNum) {
+					maxNum = arr[i];
+				}
+			}
+			return maxNum;
+		}
+		console.log(maxNumber([12,3223,42,234]));
+
+	</script>
+</body>
+</html>

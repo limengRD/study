@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// // 命名函数
+		// function a() {
+		// 	console.log('命名函数');
+		// }
+
+		// 匿名函数
+		// 匿名函数不能单独出现在代码中除非变成函数表达式格式 或者自调用 不然会报错
+		// function() {
+
+		// }
+
+		//函数表达式
+		// var a = function() {
+
+		// }
+
+		//匿名函数自调用
+		// (function() {
+
+		// })();
+
+		//函数的数据类型是 function 
+		// var a = function() {
+
+		// }
+		// console.log(typeof a); //function
+
+		//函数可以作为函数的 参数
+		// var a = function() {
+		// 	console.log('a');
+		// }
+
+		// var b = function(a) {
+		// 	console.log(a);
+		// }
+		// a();
+		// b(a);
+
+		//函数可以作为返回值
+		function a () {
+
+			return function(){
+				console.log('b');
+			}
+		}
+		console.log(a());
+	</script>
+</body>
+</html>

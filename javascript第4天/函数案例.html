@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 求斐波那契数列Fibonacci中的第n个数是多少？
+		// 1 1 2 3 5 8  13 21 34
+		// function getFib (n) {
+		// 	var n1 = 1;
+		// 	var n2 = 1;
+		// 	var n3;
+		// 	for (var i = 3; i <= n; i++){
+		// 		n3 = n1 + n2;
+		// 		n1 = n2;
+		// 		n2 = n3;
+		// 	}
+		// 	return n3;
+		// }
+		// console.log(getFib(9));
+
+
+
+		// 翻转数组
+		// function reverse (arr) {
+		// 	var newArr = [];
+		// 	for (var i = arr.length-1; i >= 0; i--) {
+		// 		newArr[newArr.length] = arr[i];
+		// 	}
+		// 	return newArr;
+		// }
+
+		// var arr1 = [1,2,3,4,5,6,7];
+		// console.log(reverse(arr1));
+
+
+
+		// 对数组进行排序从小到大 --冒泡排序
+		// function maoPao (arr) {
+		// 	var temp = 0;
+		// 	for (var i = 0; i < arr.length-1; i++) {
+		// 		for (var j = 0; j < arr.length-1-i; j++) {
+		// 			if (arr[j] > arr[j+1]) {
+		// 				temp = arr[j];
+		// 				arr[j] = arr[j+1];
+		// 				arr[j+1] = temp;
+		// 			}
+		// 		}
+		// 	}
+		// 	return arr;
+		// }
+
+		// var arr1 = [2,42,52,23,66,27,16];
+		// console.log(maoPao(arr1));
+
+
+		// 输入一个年份，判断是否是闰年[闰年：能被4整数并且不能被100整数，或者能被400整数]
+		// function runYear (n) {
+		// 	if (n % 4 == 0 && n % 100 != 0 || n % 400 == 0) {
+		// 		return '闰年';
+		// 	} else {
+		// 		return '平年';
+		// 	}
+		// }
+		// console.log(runYear(1999));
+
+
+		// 输入某年某月某日，判断这一天是这一年的第几天？
+		// 1 3 5 7 8 10 12  有31天
+		// 4 6 9 11 有30天
+		// 2 有29天;
+		// 写出一年中 每个月的天数
+		// 闰年366天    2月29天              平年365天 2月28天
+
+		function getDay (a,b,c) {
+
+		// 列出每个月的天数以方便相加
+			var arr = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+		//  判断是不是闰年 如果是闰年 则二月多1天
+			if (a % 4 == 0 && a % 100 !=0 || a % 400 == 0) {
+				arr[1] = 29;
+			}
+		// 根据月数进行循环叠加  但是月数要减1 因为10月 刚开始 不能算一个月
+			var sum = 0;
+			for (var i = 0; i < b-1; i++) {
+				sum += arr[i];
+			}
+			sum = sum  +c;
+			return sum;
+		}
+		console.log(getDay(1999,3,1));
+	</script>
+</body>
+</html>
