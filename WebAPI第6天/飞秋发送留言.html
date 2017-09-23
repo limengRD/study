@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 510px;
+            height: 500px;
+            margin : 20px auto;
+            position: relative;
+            border: 1px solid #ddd;
+        }
+        #box ul {
+            width: 490px;
+            height: 320px;
+            border-bottom: 1px solid #ddd;
+            margin: 0;
+            padding: 10px;
+            overflow: auto;
+        }
+        #box ul li {
+            list-style: none;
+        }
+        #box textarea {
+            margin: 0;
+            padding: 0;
+            width: 510px;
+            height: 110px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ddd;
+        }
+        input{
+            position: absolute;
+            bottom:0;
+            right: 20px;
+            width: 70px;
+            height: 25px;
+        }
+        select {
+            width: 20px;
+            position: absolute;
+            right:10px;
+            height: 25px;
+            bottom:0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="oUl">
+
+        </ul>
+        <textarea id="text"></textarea>
+        <input type="button" value="发送" id="btn" />
+        <select id="oSel">
+				<option value="e">按下enter发送</option>
+				<option value="c">按下ctrl+enter发送</option>
+		</select>
+    </div>
+</body>
+<script>
+    var text = document.getElementById('text');
+    var btn = document.getElementById('btn');
+    var oUl = document.getElementById('oUl');
+    var oSel = document.getElementById('oSel')
+    btn.onclick = function () {
+        oUl.innerHTML += "<li>"+ text.value +"</li>"
+        text.value = "";
+        text.focus();
+    }
+    text.onkeydown = function (e) {
+        e = e || event;
+        if(e.keyCode == 13 && !e.ctrlKey) {
+            if(oSel.value == 'e') {
+                oUl.innerHTML += "<li>"+ text.value +"</li>"
+                text.value = "";
+                text.focus();
+            }
+        }
+        if(e.keyCode == 13 && e.ctrlKey) {
+            if(oSel.value == 'c') {
+                oUl.innerHTML += "<li>"+ text.value +"</li>"
+                text.value = "";
+                text.focus();
+            }
+        }
+    }
+</script>
+</html>

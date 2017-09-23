@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #fly {
+            width: 85px;
+            height: 81px;
+            background:url(fly.gif);
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="fly"></div>
+</body>
+<script>
+    var fly = document.getElementById('fly');
+    document.onkeydown = function (e) {
+        e = e || event;
+        if(e.keyCode == 37){
+            fly.style.left = fly.offsetLeft - 10 + 'px';
+            fly.style.transform = 'rotate(-90deg)';
+        } else if(e.keyCode == 38){
+            fly.style.top = fly.offsetTop - 10 + 'px';
+            fly.style.transform = 'rotate(0deg)';     
+        }else if(e.keyCode == 39){
+            fly.style.left = fly.offsetLeft + 10 + 'px';
+            fly.style.transform = 'rotate(90deg)';     
+        }else if(e.keyCode == 40){
+            fly.style.top = fly.offsetTop + 10 + 'px';
+            fly.style.transform = 'rotate(180deg)';     
+        }
+    }
+</script>
+</html>

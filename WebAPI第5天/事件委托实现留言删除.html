@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #oUl {
+            width: 280px;
+            height: 200px;
+            border: 1px solid darkgoldenrod;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="oUl">
+    </ul>
+    <input type="text" id="text" />
+    <input type="button" value="单击发送" id="btn" />
+</body>
+<script src="myTools.js"></script>
+<script>
+    var oUl = $('#oUl');
+    var btn = $('#btn');
+    var text = $('#text');
+    // console.log(oUl);
+    // console.log(btn);
+    // console.log(text)
+    btn.onclick = function () {
+        var textValue = text.value;
+        oUl.innerHTML += "<li>" + textValue + "<a href = 'javascript:;'>删除</a></li>"
+        text.value = "";
+        text.focus();
+    }
+    oUl.onclick = function (e) {
+        e = e || event;
+        //标准浏览器支持:e.target;
+        //ie支持:e.srcElement 事件源;
+
+        var target = e.target || e.srcElement;
+        // console.log(target);
+        // console.log(target.parentNode)
+        //判断点击的是不是a标签  因为 如果点击的是li标签 li标签的父节点是ul  这个removeChild 就会出错 
+        // 因为 removeChild 方法 : 父节点.removeChild(子节点) . 如果点击的是li   子节点也是 ul .
+        if(target.nodeName == 'A'){
+            this.removeChild(target.parentNode);       
+        }
+    }
+</script>
+</html>

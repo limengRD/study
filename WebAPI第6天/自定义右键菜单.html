@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #menu {
+            width: 80px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            display: none;
+            padding: 5px;
+        }
+
+        #menu ul,
+        h3 {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font: 16px/30px "微软雅黑";
+        }
+
+        #menu ul li {
+            height: 30px;
+        }
+
+        #menu ul li a {
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+
+        #menu ul li a:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <h3>标题</h3>
+        <ul>
+            <li><a href="http://www.baidu.com">百度</a></li>
+            <li><a href="javascript:;">复制</a></li>
+            <li><a href="javascript:;">粘贴</a></li>
+            <li><a href="javascript:;">属性</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    var menu = document.getElementById('menu');
+    document.oncontextmenu = function (e) {
+        e = e || event;
+        menu.style.left = e.clientX + 'px';
+        menu.style.top = e.clientY + 'px';
+        menu.style.display = 'block';
+        return false;
+    }
+    document.onclick = function () {
+        menu.style.display = 'none';
+    }
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #box {
+            width: 100px;
+            margin: 10px auto 0;
+            border: 1px solid black;
+        }
+        ul,h3 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        ul li {
+            list-style: none;
+            height: 30px;
+            font:20px/30px "微软雅黑";
+            background-color: orange;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h3>标题</h3>
+        <ul>
+            <li>新闻</li>
+            <li>娱乐</li>
+            <li>体育</li>
+            <li>头条</li>
+        </ul>
+    </div>
+</body>
+<script src="myTools.js"></script>
+<script>
+    var oBox = $('#box');
+    var oUl = last(oBox);
+    console.log(oUl);
+    var onOff = true;
+    oBox.onclick = function (e) {
+        e = e || event;
+        e.cancelBubble = true;
+        if(onOff) {
+            oUl.style.display = 'none';
+        } else {
+            oUl.style.display = 'block'
+        }
+        onOff = !onOff;
+    }
+    document.onclick = function () {
+        oUl.style.display = 'none';
+        onOff = false;
+    }
+</script>
+</html>

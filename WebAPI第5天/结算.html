@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            border: 1px solid #fff;
+            background-color: #f0f0f0;
+        }
+
+        thead {
+            background-color: #09c;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            text-align: center;
+        }
+
+        th {
+            color: #fff;
+        }
+
+        td {
+            color: #404060;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>全选<input type="checkbox" id="checkAll"></th>
+                <th>商品名称</th>
+                <th>商品数量</th>
+                <th>单价</th>
+                <th>小计</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input class="checkOne" type="checkbox"></td>
+                <td>上衣</td>
+                <td>
+                    <input class='minus' type='button' value='-'>
+                    <span class='count'>0</span>
+                    <input class='add' type='button' value='+'>
+                </td>
+                <td><em class='money'>229.0</em></td>
+                <td><span class='lMoney'>0</span></td>
+            </tr>
+            <tr>
+                <td><input class="checkOne" type="checkbox"></td>
+                <td>裤子</td>
+                <td>
+                    <input class='minus' type='button' value='-'>
+                    <span class='count'>0</span>
+                    <input class='add' type='button' value='+'>
+                </td>
+                <td><em class='money'>199.0</em></td>
+                <td><span class='lMoney'>0</span></td>
+            </tr>
+            <tr>
+                <td><input class="checkOne" type="checkbox"></td>
+                <td>鞋子</td>
+                <td>
+                    <input class='minus' type='button' value='-'>
+                    <span class='count'>0</span>
+                    <input class='add' type='button' value='+'>
+                </td>
+                <td><em class='money'>99.0</em></td>
+                <td><span class='lMoney'>0</span></td>
+            </tr>
+            <tr>
+                <td><input class="checkOne" type="checkbox"></td>
+                <td>帽子</td>
+                <td>
+                    <input class='minus' type='button' value='-'>
+                    <span class='count'>0</span>
+                    <input class='add' type='button' value='+'>
+                </td>
+                <td><em class='money'>50.0</em></td>
+                <td><span class='lMoney'>0</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="over" style="width:50px;height:30px;background-color:red;color:#fff;text-align:center;line-height:30px;cursor:pointer;margin-left:750px;">结算</div>
+    <div id="total">
+        商品合计：0件<br /> 共花费了:0元
+        <br /> 其中最贵的商品单价是：0元
+    </div>
+
+</body>
+<script src="myTools.js"></script>
+<script>
+    //获取全选按钮
+    var checkAll = $('#checkAll');
+    //获取每一个按钮
+    var checkOne = document.getElementsByClassName('checkOne');
+    //获取每一个减号
+    var minus = document.getElementsByClassName('minus');
+    console.log(minus);
+    //获取每一个加号
+    var add = document.getElementsByClassName('add');
+    console.log(add);
+    var over = document.getElementById('over');
+    over.onclick = function () {
+        var overMoney = 0;
+        var lMoney = document.getElementsByClassName('lMoney');
+        for(var i = 0 ; i < checkOne.length ; i++) {
+            if(checkOne[i].checked == true) {
+                overMoney += parseInt(lMoney[i].innerHTML);
+            }
+        }
+        alert("本次消费:" + overMoney + "￥");
+    }
+
+    //给全选按钮绑定事件 点击全选选中所有商品
+    checkAll.onclick = function () {
+        for (var i = 0; i < checkOne.length; i++) {
+            checkOne[i].checked = this.checked;
+        }
+    }
+
+    //遍历每个商品的选择按钮 给每个绑定事件 当全部选中时 将全选按钮选中
+    for (var i = 0; i < checkOne.length; i++) {
+        checkOne[i].onclick = function () {
+            var onOff = true;
+            for (var i = 0; i < checkOne.length; i++) {
+                if (checkOne[i].checked == false) {
+                    onOff = false;
+                }
+            }
+            checkAll.checked = onOff;
+        }
+    }
+
+    //给每个 减号  加号 遍历绑定函数 实现点击增加减少商品数量
+    for (var i = 0; i < minus.length; i++) {
+        minus[i].index = i;
+        minus[i].onclick = function () {
+            var count = document.getElementsByClassName('count');
+            var lMoney = document.getElementsByClassName('lMoney');
+            var money = document.getElementsByClassName('money');
+            if (count[this.index].innerHTML > 0) {
+                count[this.index].innerHTML -= 1;
+                lMoney[this.index].innerHTML = parseInt(count[this.index].innerHTML) * money[this.index].innerHTML;
+                var theCount = 0;
+                var theMoney = 0;
+                var max = 0;
+                for (var i = 0; i < count.length; i++) {
+                    if(parseInt(count[i].innerHTML) != 0){
+                        if(max < parseInt(money[i].innerHTML)){
+                            max = parseInt(money[i].innerHTML);
+                        }
+                    }
+                    theCount += parseInt(count[i].innerHTML);
+                }
+                for (var i = 0; i < lMoney.length; i++) {
+                    theMoney += parseInt(lMoney[i].innerHTML);
+                }
+                total.innerHTML = "商品合计：" + theCount + "件<br /> 共花费了:"+ theMoney +"元<br />其中最贵的商品单价是："+max+"元"
+            }
+        }
+    }
+
+
+
+    for (var i = 0; i < add.length; i++) {
+        add[i].index = i;
+        add[i].onclick = function () {
+            var count = document.getElementsByClassName('count');
+            var lMoney = document.getElementsByClassName('lMoney');
+            var money = document.getElementsByClassName('money');
+            var total = document.getElementById('total');
+            count[this.index].innerHTML = parseInt(count[this.index].innerHTML) + 1;
+            lMoney[this.index].innerHTML = parseInt(count[this.index].innerHTML) * money[this.index].innerHTML;
+            var theCount = 0;
+            var theMoney = 0;
+            var max = 0;
+            for (var i = 0; i < count.length; i++) {
+                if(parseInt(count[i].innerHTML) != 0){
+                    if(max < parseInt(money[i].innerHTML)){
+                        max = parseInt(money[i].innerHTML);
+                    }
+                }
+                theCount += parseInt(count[i].innerHTML);
+            }
+            for (var i = 0; i < lMoney.length; i++) {
+                    theMoney += parseInt(lMoney[i].innerHTML);
+            }
+            total.innerHTML = "商品合计：" + theCount + "件<br /> 共花费了:"+ theMoney +"元<br />其中最贵的商品单价是："+ max +"元"
+        }
+    }
+
+</script>
+
+</html>

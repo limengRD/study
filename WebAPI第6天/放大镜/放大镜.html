@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #small{
+            width: 480px;
+            height: 288px;
+            background-image: url(img/small.png);
+            margin-top: 200px;
+            margin-left: 200px;
+            cursor:move;
+        }
+        #blow {
+            width:100px;
+            height: 100px;
+            background: url(img/bj.png);
+            display: none;
+            position:absolute;
+            left: 0;
+            top: 0;
+        }
+        #big {
+            background: url(img/big.jpg) no-repeat;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top:200px;
+            right: 800px;
+            display: none;
+
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div id = "small">
+        <div id = 'blow'></div>
+    </div>
+    <div id = "big"></div>
+</body>
+<script>
+    var small = document.getElementById('small');
+    var big = document.getElementById('big');
+    var blow = document.getElementById('blow');
+
+    small.onmouseover =function (e) {
+        blow.style.display = "block";
+        big.style.display = 'block';
+        small.onmousemove = function (e) {
+                e = e || event;
+                x = e.clientX - 50;
+                y = e.clientY - 50;
+                if(x < small.offsetLeft) {
+                    x = small.offsetLeft;
+                }
+                if(y < small.offsetTop ){
+                    y = small.offsetTop;
+                }
+                if(x >small.offsetLeft + small.offsetWidth - 100){
+                    x = small.offsetLeft + small.offsetWidth -100;
+                }
+                if(y>small.offsetTop + small.offsetHeight -100){
+                    y = small.offsetTop + small.offsetHeight -100; 
+                }
+                blow.style.left = x + 'px';
+                blow.style.top = y + 'px';
+                console.log(x,y)
+                big.style.backgroundPosition = "" + -(x-small.offsetLeft)*4 + "px " + -(y-small.offsetTop)*4 + "px"
+        } 
+
+    }         
+
+      small.onmouseout = function (e) {
+        blow.style.display = 'none';
+        big.style.display = 'none'
+    }
+
+
+</script>
+</html>
