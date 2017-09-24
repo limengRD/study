@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串的不可变性
+        // var str = "Hello";
+        // str11 = str;
+        // str1 = 'zhangsan';
+        // console.log(str);
+        // for(var i = 0; i < str.length; i++){
+        //     console.log(str[i]);
+        // }
+        // str[0] = 'm';
+        // console.log(str);
+        // var arr = [1,2,4];
+        // arr[0] = 3;
+        // console.log(arr);
+
+        // 字符串的不可变性会有什么样的影响呢
+        var str = '';
+        for (var i = 0; i < 100000; i++) {
+            str += 's';
+        }
+        console.log(str);
+    </script>
+</body>
+</html>

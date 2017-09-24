@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>		
+		function getRandom(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+	    }
+
+	setInterval(function(){
+
+		var r = getRandom(0,255);
+		var g = getRandom(0,255);
+		var b = getRandom(0,255);
+		var body = document.getElementsByTagName('body')[0];
+
+		body.style.backgroundColor = 'rgb('+ r + ',' + g + ',' + b + ')' ;
+	},1000)
+	    
+	</script>
+</body>
+</html>

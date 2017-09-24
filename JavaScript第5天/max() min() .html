@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var myMath = {
+			max:function() {
+				if(arguments.length == 0) {
+					return -Infinity;
+				}
+				var maxValue = arguments[0];
+				for (var i = 1; i < arguments.length; i++) {
+					if (arguments[i] > maxValue) {
+						maxValue = arguments[i];
+					}
+				}
+				return maxValue;
+			},
+			min: function() {
+				if(arguments.length == 0 ) {
+					return -Infinity;
+				}
+				var minValue = arguments[0];
+				for (var i = 1; i < arguments.length; i++){
+					if(arguments[i] < minValue){
+						minValue = arguments[i];
+					}
+				}
+				return minValue;
+			}
+		}
+		console.log(myMath.max(10,20434,1,5));
+		console.log(myMath.min(23,23,42,513,534))
+	</script>
+
+</body>
+</html>

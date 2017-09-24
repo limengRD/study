@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.charAt();
+        var str = 'helloworld';
+        console.log(str.charAt(1));
+
+        // 2.voncat();方法将一个或多个字符串与原字符串链接合并，形成一个新的字符串并返回。
+        var str1 = '我爱';
+        var str2 = '我的祖国';
+        var str = str1.concat(str2);
+        console.log(str);
+
+        // 3.slice(开始时候的索引，结束时候的索引);提取字符串的一部分
+        var newStr = str.slice(2,4);
+        console.log(newStr);
+
+        // 4. substring()方法返回一个字符串在开始索引到结束索引之间的一个子集
+        // 或者从开始索引直到字符串的末尾的一个子集
+        var newStr = str.substring(1,4);
+        console.log(newStr);
+
+        // 5.substr()方法返回一个字符串中 从指定的位置开始到指定字符数的字符
+        // 第一个参数是开始的位置 第二个参数是返回的字符的个数
+        var result = str.substr(2,3);
+        console.log(result);
+
+        // 6.indexOf 调用String 对象中的第一次出现的指定值得索引
+        var str= 'cxyzc';
+        for (var i = 0 ; i < str.length; i++) {
+            console.log(str.indexOf(str[i]));
+        }
+
+        // 7.trim();去除两边的空白 返回一个新的  不会改原来的
+        var str = '        adsjdkl            ';
+        console.log(str);
+        var newStr = str.trim();
+        console.log(newStr);
+
+        // 8.大小写转换
+        // toUpperCase() 将调用该方法的字符串值转为小写形式，并返回。
+        var str = 'HeLLO';
+        str = str.toLowerCase();
+
+        console.log(!);
+    </script>
+</body>
+</html>

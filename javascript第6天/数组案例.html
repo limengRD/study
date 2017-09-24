@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将一个字符串数组输出为|分割的形式，比如“刘备|张飞|关羽”。使用两种方式实现
+        // 方法一
+        // var array = ['刘备' , '张飞' ,'关羽'];
+        // var str = array[0];
+        // for(var i = 1 ; i < array.length ; i++) {
+        //     str += "|" + array[i];
+        // }
+        // console.log(str);
+        // 方法二
+
+        // var array = ['刘备','张飞','关羽'];
+        // var arrStr = array.toString();
+        // console.log(arrStr);
+
+        // var newAarray = array.join('|');
+        // console.log(newAarray);
+
+        // 将一个字符串数组的元素的顺序进行翻转
+        // 一.
+        // var arr = [1,2,3,4,5];
+        // var newArr = [];
+        // function resever (){
+        //     var newArr = [];
+        //     for(var i = arr.length-1; i>=0; i--){
+        //         newArr[newArr.length] = arr[i];
+        //     }
+        //     return newArr;
+        // }
+        // console.log(resever(arr));
+        // 二.
+        // arr.reverse();
+        // console.log(arr);
+        // 三.
+         
+        // for(var i = 0; i<arr.length-1;i++) {
+        //     for (var j=0; j<arr.leghth-i-1;j++){
+        //         if(j < (j+1)){
+        //             var temp = arr[j];
+        //             arr[j] = arr[j+1];
+        //             arr[j+1] = temp;
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+
+        // 工资数组[1500,1200,2000,2100,1800]
+        // 方法一
+        // var array = [1500,1200,2000,2100,1800];
+        // var newArray = [];
+        // function getArr (arr) {
+        //     for(var i = 0; i < arr.length; i++){
+        //         if(arr[i]<2000){
+        //             newArray.push(arr[i]);
+        //         }
+        //     }
+        // }
+        // getArr(array);
+        // console.log(newArray);
+        // 方法二.
+        // var newArray = array.filter(function(item){
+        //     return item <= 2000;
+        // })
+        // console.log(newArray);
+
+        var arr = ['c','a','z','a','x','a'];
+        var obj = {}
+        for (var i = 0; i < arr.length; i++){
+            item = arr[i];
+            if(obj[item]) {
+                obj[item]++;
+            }else {
+                obj[item] = 1;
+            }
+        }
+        console.log(obj);
+        var newArr = [];
+        for(var key in obj){
+            newArr.push(key);
+        } 
+        console.log(newArr);      
+    </script>
+</body>
+</html>

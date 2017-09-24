@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字面量
+        var arr = [1,2,3,'a','b','c'];
+        // 构造函数
+        var array = new Array(1,2,4,'a','b');
+        
+        // 检测数组的两种方式
+        // 1.
+        console.log(array instanceof Array);
+        // 2.新方法
+        var result = Array.isArray(array);
+        console.log(result);
+    </script>
+</body>
+</html>             
