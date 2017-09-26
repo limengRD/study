@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">box</div>
+    <span class="aa">span</span>
+    <span>span</span>
+    <span>span</span>
+    <span class="aa">span</span>
+    <p>ppppp</p>
+</body>
+<script>
+    // 获取元素的其他方法 可以通过 选择器来获取 但是有兼容性问题
+    // var aBox = document.querySelector('#box');
+    // console.log(aBox);
+    // var aAa = document.querySelector('.aa');
+    // console.log(aAa);
+    // var aSpan = document.querySelector('span');
+    // console.log(aSpan);
+
+    var oBox = document.querySelectorAll("span");
+    console.log(oBox);
+    for(var i = 0 ; i < oBox.length ; i++){
+        oBox[i].style.backgroundColor = "red";
+    }
+
+</script>
+</html>

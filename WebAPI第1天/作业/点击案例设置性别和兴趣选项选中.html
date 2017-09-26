@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value= '点击选中'><br />
+    性别<input type="checkbox">
+    兴趣<input type="checkbox">
+    年龄<input type="checkbox">
+</body>
+<script>
+    var oInp = document.getElementsByTagName('input');
+    oInp[0].onclick = function() {
+        oInp[1].checked = 'checked';
+        oInp[2].checked = 'checked';
+    }
+</script>
+</html>

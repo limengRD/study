@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="禁用" />
+    <input type="text" value="这是文本框的内容" />
+</body>
+<script>
+    var oInp = document.getElementsByTagName('input');
+    oInp[0].onclick = function() {
+        if(oInp[0].value == '禁用'){
+            oInp[1].disabled = true;
+            oInp[0].value = '解禁'
+        } else{
+            oInp[1].disabled = false;
+            oInp[0].value = '禁用';
+        }
+     
+    }
+</script>
+</html>

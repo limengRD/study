@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>男生爱好</button>
+    <button>女生爱好</button>
+    <input type="radio" name="sex" />男
+    <input type="radio" name="sex" />女
+    <input type="checkbox" />抽烟
+    <input type="checkbox" />喝酒
+    <input type="checkbox" />吃饭
+    <input type="checkbox" />睡觉
+    <input type="checkbox" />烫头
+    <input type="checkbox" />大保健
+    <input type="checkbox" />写bug
+    <input type="checkbox" />生活不至于眼前的苟且，还有html，css和js
+</body>
+<script>
+    var button = document.getElementsByTagName('button');
+    var input = document.getElementsByTagName('input');
+
+    button[0].onclick = function () {
+        for(var i = 0 ; i < input.length ; i++) {
+            input[i].checked = false;
+        }
+        for(var i = 0 ; i < input.length ; i++) {
+            if(i != 1 && i != 4 && i != 5) {
+                input[i].checked = true;
+            }
+        }
+    }
+
+    button[1].onclick = function () {
+        for(var i = 0 ; i < input.length ; i++) {
+            input[i].checked = false;
+        }
+        for(var i = 0 ; i < input.length ; i++) {
+            if(i != 0 && i !=2 && i !=3 && i!= 7 ) {
+                input[i].checked = true;
+            }
+        }
+    }
+</script>
+</html>

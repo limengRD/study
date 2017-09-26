@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="box">box<span>span</span></div>
+</body>
+<script>
+    var oBox = document.getElementById('box');
+//   innerHTML会把标签获取出来
+    console.log(oBox.innerHTML);
+    // innerText只会获取文字
+    console.log(oBox.innerText);
+    // 会把html解析成html标签
+    oBox.innerHTML = '<strong>adadad</strong>';
+    // 会认为标签是字符串
+    oBox.innerText = '<strong>dfafsdf</strong>';
+</script>
+</html>

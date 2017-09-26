@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            border: 0;
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 30px;
+            margin: 10px;
+            /*获取插入条之后的蓝色外边框去除*/
+            outline-style: none;
+            padding-left: 10px;
+            font-size: 18px;
+        }
+
+        .wrong {
+            border: 1px solid red;
+        }
+
+        .wrong-span {
+            color: red;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    账号:<input type="text"><span></span><br> 密码:
+    <input type="text"><span></span>
+</body>
+<script>
+    var input = document.getElementsByTagName('input');
+    var span = document.getElementsByTagName('span');
+    input[0].onblur = function () {
+        if(input[0].value == ''){
+            span[0].innerHTML = '请输入内容';
+        }
+    }
+    input[0].oninput = function () {
+        if(input[0].value.length == 0) {
+            span[0].innerHTML = '请输入内容';
+        } else if (input[0].value.length < 6 || input[0].value.length > 20) {
+            span[0].innerHTML = '请输入正确的字符个数 6 -20'
+            span[0].className = 'wrong-span';
+            input[0].className = 'wrong';
+        }  else {
+            span[0].innerHTML = '正确';
+            input[0].className = '';
+            span[0].className = 'right';
+        }   
+    }
+</script>
+</html>

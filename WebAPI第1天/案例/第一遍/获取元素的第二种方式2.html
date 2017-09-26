@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 如果script 标签在body上面定义 因为页面还没有加载  所有获取到的 元素是不存在的 所以会报错。
+        // var oBox = document.getElementById('box');
+        var aDiv = document.getElementsByTagName("div");
+        // aDiv[0].style.backgroundColor = "red";
+    </script>
+</head>
+<body>
+    <div id="box">div</div>
+    <div>div2</div>
+    <div>div3</div>
+</body>
+<script>
+    // 如果页面加载完之后 加入script标签 上面获取的东西 也能在下面输出
+    console.log(aDiv);
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 350px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            display: none;
+            background-color: orange;
+        }
+
+        input {
+            width: 80px;
+            height: 30px;
+            font: 15px/30px "微软雅黑";
+            background-color: paleturquoise;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="袜子" class="active" />
+    <input type="button" value="牛仔裤" />
+    <input type="button" value="连衣裙" />
+    <input type="button" value="鞋" />
+    <div style="display: block;">白色长袜子</div>
+    <div>lee牛仔裤</div>
+    <div>时尚连衣裙</div>
+    <div>女式高跟鞋</div>
+</body>
+<script>
+    var input = document.getElementsByTagName('input');
+    var div = document.getElementsByTagName('div');
+
+    for(var i = 0 ; i < input.length ; i++) {
+        input[i].index = i;
+        input[i].onclick = function () {
+            for(var i = 0 ; i < input.length ; i++) {
+                input[i].className = '';
+                div[i].style.display = 'none';
+            }
+            this.className = 'active';
+            div[this.index].style.display = 'block';
+        }
+    }
+</script>
+</html>

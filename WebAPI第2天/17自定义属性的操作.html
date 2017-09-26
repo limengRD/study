@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="box" def="尼古拉斯赵四"  class="aa" title="盒子" aaa='aaa'>box</div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    console.log(box.className);
+
+    // 没有在页面上添加一个自定义的属性 但是可以使用
+    box.abc = 'abc';
+    console.log(box.abc);
+    
+    // 获取标签中定义的自定义属性显示 undefined
+    console.log(box.aaa);
+
+    // 获取自定义属性 和常规 属性的方法
+    console.log(box.getAttribute('aaa'));
+    console.log(box.getAttribute('title'));
+
+    box.setAttribute("bbb","bbb")
+</script>
+</html>

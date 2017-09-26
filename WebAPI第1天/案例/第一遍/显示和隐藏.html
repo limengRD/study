@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="显示" />
+    <input type="button" value="隐藏" />
+    <div id="box"></div>
+</body>
+<script>
+    var aInp = document.getElementsByTagName('input');
+    var aBox = document.getElementById("box");
+    aInp[0].onclick = function() {
+        aBox.style.display = "block";
+    }
+    aInp[1].onclick = function() {
+        aBox.style.display = "none";
+    }
+</script>
+</html>

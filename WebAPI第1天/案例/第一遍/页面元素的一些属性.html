@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="image/1-small.jpg" alt="" />
+
+    <div id="box" title="盒子">box</div>
+    <a href="http://www.baidu.com">打开百度</a>
+    <p class="p1">pppppppp</p>
+</body>
+<script>
+    var aImg = document.getElementsByTagName('img');
+    console.log(aImg[0].src);   
+    // 可以通过.来查看标签中的属性的值
+    var oBox = document.getElementById('box');
+    console.log(oBox.title);
+    var aA = document.getElementsByTagName('a');
+    console.log(aA[0].href);
+    var aP = document.getElementsByTagName('p');
+    console.log(aP[0].className);
+</script>
+</html>

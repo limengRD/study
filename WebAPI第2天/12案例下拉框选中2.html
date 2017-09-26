@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="单击选中深圳" />
+    <select id="sel">
+            <option value="bj">北京</option>
+            <option value="sh">上海</option>
+            <option value="gz">广州</option>
+            <option value="sz">深圳</option>
+            <option value="hz">杭州</option>
+        </select>
+</body>
+<script>
+    var input = document.getElementsByTagName('input');
+    var option = document.getElementsByTagName('option');
+    input[0].onclick = function () { 
+        option[3].selected = true;
+    }
+</script>
+</html>

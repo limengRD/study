@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>pppppp</p>
+        <p class="aa">pppppp</p>
+    </div>
+    <span class="aa">span</span>
+    <p class="aa">222222</p>
+    <p class="bb">pppppp</p>
+    <em class="abc aa box">em</em>
+</body>
+<script>
+    
+    var oBox = document.getElementById('box');
+    var oAo = document.getElementsByClassName('aa');
+    console.log(oAo);
+
+    for(var i = 0 ; i < oAo.length; i++){
+        oAo[i].style.backgroundColor = "red";
+    }
+</script>
+</html>

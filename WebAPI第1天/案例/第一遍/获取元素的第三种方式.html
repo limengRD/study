@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" name="text1" />
+		<input type="password" name="pd" />
+		<input type="radio" name="sex"  />男
+		<input type="radio" name="sex"  />女
+		<div name="abc">div</div>
+		<div id="abc">div2</div>
+</body>
+<script>
+    var oText1 = document.getElementsByName('text1');
+    console.log(oText1);
+
+    oText1[0].style.backgroundColor = 'red';
+
+    var aSex = document.getElementsByName("sex");
+    console.log(aSex);
+
+    var oAbc = document.getElementsByName("abc");
+    console.log(oAbc);
+
+    for(var i = 0; i < oAbc.length; i++){
+        oAbc[i].style.backgroundColor = "red";
+    }
+</script>
+</html>

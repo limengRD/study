@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <input type="button" value = "切换到绿狗">
+    <img src="./jd1.png" alt="">
+    <script>
+        var oImg = document.getElementsByTagName('img')[0];
+        var oInput = document.getElementsByTagName('input')[0];
+
+        oInput.onclick = function() {
+            console.log(oImg.src);
+            if (oInput.value == "切换到绿狗") {
+                oInput.value = "切换到红狗";
+                oImg.src = './jd2.png';
+            } else {
+                oInput.value = "切换到绿狗";
+                oImg.src = './jd1.png';
+            }
+        }
+    </script>
+</body>
+</html>

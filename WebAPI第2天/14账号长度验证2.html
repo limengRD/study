@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            input {
+            border: 0;
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 30px;
+            margin: 10px;
+            /*获取插入条之后的蓝色外边框去除*/
+            outline-style: none;
+            padding-left: 10px;
+            font-size: 18px;
+        }
+
+        .wrong {
+            border: 1px solid red;
+        }
+
+        .wrong-span {
+            color: red;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    账号:<input type="text" ><span></span><br> 
+    密码:<input type="text"><span></span>
+</body>
+<script>
+    var input = document.getElementsByTagName('input')[0];
+    var span = document.getElementsByTagName('span')[0];
+    input.oninput = function() {
+        if(input.value.length == ""){
+            span.innerHTML = '请输入内容';
+        }else if(input.value.length <6  || input.value.length > 20) {
+            span.innerHTML = '请输入正确的字符数，6-20';
+            input.className = 'wrong';
+            span.className = 'wrong-span';
+        }else {
+            span.innerHTML = '正确';
+            input.className = '';
+            span.className = 'right';
+        } 
+    }
+</script>
+</html>

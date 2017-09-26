@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击">
+    <select name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+    </select>
+</body>
+<script>
+    var oInp = document.getElementsByTagName('input')[0];
+    var oOp = document.getElementsByTagName('option');
+    oInp.onclick = function() {
+        oOp[3].selected = 'selected';
+    }
+</script>
+</html>

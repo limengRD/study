@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+<script>
+
+    // var oLi = document.getElementsByTagName('li');
+    // for(let i = 0 ; i < oLi.length ; i++) {
+    //     if(i == 0) {
+    //         oLi[i].onclick = function() {
+    //             console.log(oLi[0]);
+    //             oLi[i].style.backgroundColor = 'red';
+    //         }
+    //     } else if (i == 1 ){
+    //         oLi[i].onclick = function() {
+    //             oLi[1].style.border = '1px solid blue';
+    //         }
+    //     }else if (i == 2 ){
+    //         oLi[i].onclick = function() {
+    //             oLi[2].style.border = '1px solid green';
+    //         }
+    //     }
+    // }
+    function fn () {
+        console.log(this);
+    }
+    var date = new fn();
+    
+</script>
+</html>

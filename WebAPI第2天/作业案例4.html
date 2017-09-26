@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input type="button" value="单击修改每一个图片的title" />
+        <p></p>
+        <p></p>
+        <p></p>
+</body>
+<script>
+    var p = document.getElementsByTagName('p');
+    var input = document.getElementsByTagName('input')[0];
+    var arr = ['1','2','3']
+    input.onclick = function () {
+        for(var i = 0 ; i < p.length ; i++){
+                p[i].innerHTML = arr[i];
+        }
+    }
+</script>
+</html>

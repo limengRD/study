@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="请您输入内容" />
+</body>
+<script>
+    var oInp = document.getElementsByTagName('input')[0];
+    oInp.onfocus = function() {
+        if(this.value == '请您输入内容'){
+            oInp.value = "";
+        }
+        
+    }
+    oInp.onblur = function() {
+        if(this.value == ''){
+            oInp.value = "请您输入内容";
+        }
+     
+    }
+</script>
+</html>

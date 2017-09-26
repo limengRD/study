@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="修改">
+    <img src="./jd1.png" alt="" title= "红狗">
+    <img src="./jd2.png" alt="" title= "绿狗">
+
+</body>
+<script>
+    var oImg = document.getElementsByTagName('img');
+    var oInput = document.getElementsByTagName('input');
+    oInput[0].onclick = function() {
+        oImg[0].title = '京东';
+        oImg[1].title = '京东';
+    }
+    
+</script>
+</html>

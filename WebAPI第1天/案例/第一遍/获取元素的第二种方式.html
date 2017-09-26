@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>div</div>
+    <div id = 'aa'>div2</div>
+    <div>div3</div>
+</body>
+    <script>
+        var abc = document.getElementsByTagName('div');
+        console.log(abc);
+        console.log(typeof abc);
+        abc[0].style.backgroundColor = 'green';
+        abc[2].style.border = '1px solid red';
+        var oAa = document.getElementById("aa");
+        console.dir(oAa);
+    </script>
+</html>

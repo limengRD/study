@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    #img {
+        display: block;
+        margin: 100px auto 0;
+    }
+
+    .text {
+        border: 2px solid red !important;
+    }
+
+
+    #box {
+        margin: 0 auto;
+        width: 650px;
+    }
+
+    #text {
+        width: 540px;
+        height: 38px;
+        float: left;
+        outline: none;
+        border: 1px solid #3385ff;
+        text-indent: 10px;
+        font-size: 20px;
+    }
+
+    #btn {
+        width: 100px;
+        color: white;
+        float: left;
+        background-color: #3385ff;
+        border: none;
+        height: 42px;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <input type="text" id="text" />
+        <input type="button" value="百度一下" id="btn" />
+    </div>
+</body>
+<script>
+    var input = document.getElementsByTagName('input');
+    input[0].focus();
+    input[0].onfocus = function () {
+        input[0].style.border = "1px solid #3385ff";
+    }
+    input[0].onblur = function () {
+        input[0].style.border = '1px solid #ccc';
+    }
+</script>
+</html>
