@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" title="盒子">哈哈
+        <!--这是一个注释-->
+    </div>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li id="aa">333</li>
+        <li>444</li>
+    </ul>
+</body>
+<script src="myTools.js"></script>
+<script>
+    var box = $('#box');
+    console.log(getStyle(box,'backgroundColor'))
+    // var oBox = document.getElementById('box');
+    // console.log(oBox.nodeType);
+    // console.log(oBox.nodeName);
+    // console.log(oBox.nodeValue);
+
+    // console.log(oBox.attributes);
+    // console.log(oBox.attributes[0]);
+    // console.log(oBox.attributes[0].nodeType);
+    // console.log(oBox.attributes[0].nodeName);
+    // console.log(oBox.attributes[0].nodeValue);
+</script>
+</html>

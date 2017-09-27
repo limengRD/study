@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">box</div>
+    <div id="box2">box2</div>
+</body>
+<script>
+    var oBox = document.getElementById('box');
+    var oBox2 = document.getElementById('box2');
+    //obj.onclick = function() {} 方法绑定事件 若果 一个obj 绑定同一个事件  前面的事件会被后面的覆盖掉.
+    oBox.onclick = function () {
+        console.log(123);
+    }
+    oBox.onclick = function () {
+        console.log(321);
+    }
+    
+    
+</script>
+</html>

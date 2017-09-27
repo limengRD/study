@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">box</div>
+    <div id="box2">box2</div>
+
+</body>
+<script>
+//函数在没有调用者的时候 指向window
+   function fn (a,b) {
+        console.log(a+b) ;
+        this.style.backgroundColor = "red";
+    } 
+    
+    var oBox = document.getElementById('box');
+    fn.call(oBox);
+    fn.call(oBox,12,25);
+</script>
+</html>

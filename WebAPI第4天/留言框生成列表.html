@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #oUl {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 0;
+            padding: 0;
+            overflow:auto;
+        }
+        #oUl li {
+            list-style : none;
+            overflow : hidden;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="oUl">
+        <!--<li>这是你说的话</li>-->
+    </ul>
+    <span id="person">小明:</span><input type="text" id="text1" />
+    <input type="button" value="发送" id="btn" />
+</body>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var oUl = $('oUl');
+    var oText1 = $('text1');
+    var oBtn = $('btn');
+    var oPerson = $('person');
+    
+    oText1.focus();
+    
+
+    // 将发送的消息添加到ul中
+    oBtn.onclick = function () {
+        if(oPerson.innerHTML == '小明:'){
+            var str = oText1.value;
+            oUl.innerHTML += "<li><div><strong style='color:green'>" + oPerson.innerHTML + "</strong>" + str + "</div></li>";
+            var li =  oUl.getElementsByTagName('li');
+            // console.log(li);
+            for(var i = 0 ; i < li.length; i++) {
+                // console.log(li[i].children[0].innerHTML)
+                if(li[i].children[0].children[0].innerHTML == "小明:") {
+                    li[i].children[0].style.backgroundColor = "yellow"; 
+                    li[i].children[0].style.float = "left";
+                }
+            }
+        } else {
+            var str = oText1.value;
+            oUl.innerHTML += "<li><div><strong style='color:red'>" + oPerson.innerHTML + "</strong>" + str + "</div></li>";
+            var li =  oUl.getElementsByTagName('li');
+            for(var i = 0 ; i < li.length; i++) {
+                // console.log(li[i].children[0].innerHTML)
+                if(li[i].children[0].children[0].innerHTML == "小花:") {
+                    li[i].children[0].style.backgroundColor = "pink";
+                    li[i].children[0].style.float = "right"; 
+                }
+            }
+        }
+       
+        oText1.value = "";
+        oText1.focus();
+    }
+
+
+    // 更改消息发送者
+    oPerson.onclick = function () {
+        // console.log(23123)
+        if(this.innerHTML == '小明:') {
+            this.innerHTML= '小花:';
+        }else {
+            this.innerHTML='小明:';
+        }
+    }
+</script>
+</html>

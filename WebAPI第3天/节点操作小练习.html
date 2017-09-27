@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="oUl">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>5555</li>
+        <li>6666</li>
+        <li>7777</li>
+        <li>88888</li>
+    </ul>
+</body>
+<script src="myTools.js"></script>
+<script>
+    var oUl = document.getElementById('oUl');
+    var childs = oUl.children;
+    for(var i = 0 ; i < childs.length; i++){
+        childs[i].onmouseover = function() {
+            for(var i = 0 ; i< childs.length ; i++) {
+                childs[i].style.backgroundColor = "";
+            }
+            if(next(this)) {
+                next(this).style.backgroundColor = "green";
+            }else {
+                this.style.backgroundColor = 'pink';
+            }
+        }
+    }
+</script>
+</html>

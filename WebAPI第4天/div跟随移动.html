@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    var oBox = document.getElementById('box');
+    document.onmousemove = function (e) {
+        e = e || event;
+        console.log(123);
+        oBox.style.left = e.clientX -50 + 'px';
+        oBox.style.top = e.clientY -50 + 'px';
+    }
+</script>
+</html>

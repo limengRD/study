@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #oUl {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul id="oUl">
+        <!--<li>这是你说的话</li>-->
+    </ul>
+    <span id="person">小明:</span><input type="text" id="text1" />
+    <input type="button" value="发送" id="btn" />
+</body>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var oUl = $('oUl');
+    var oText1 = $('text1');
+    var oBtn = $('btn');
+    var oPerson = $('person');
+    oText1.focus();
+
+    oBtn.onclick = function () {
+        var str = oText1.value;
+        oUl.innerHTML = "<li><strong style='color:green'>" + oPerson.innerHTML + "</strong>" + str + "</li>" + oUl.innerHTML;
+        oText1.value = "";
+        oText1.focus();
+    }
+    oPerson.oclick = function () {
+        if(this.innerHTML == '小明:') {
+            this.innerHTML= '小花:';
+        }else {
+            this.innerHTML='小明:';
+        }
+    }
+</script>
+</html>

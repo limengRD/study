@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #list {
+            width: 240px;
+            border: 1px solid #333;
+            margin: 0 auto;
+        }
+
+        #list .lis {}
+
+        #list h2 {
+            height: 30px;
+            line-height: 30px;
+            text-indent: 20px;
+            background: url(img/ico1.gif) no-repeat 5px center #6FF;
+            color: #000;
+        }
+
+        #list .active {
+            background: url(img/ico2.gif) no-repeat 5px center #FF9;
+            color: #000;
+        }
+
+        #list ul {
+            display: none;
+        }
+
+        #list ul li {
+            line-height: 24px;
+            border-bottom: 1px solid #333;
+            text-indent: 24px;
+        }
+
+        #list ul .hover {
+            background: #6FF;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li class="lis">
+            <h2>我的好友</h2>
+            <ul class = 'ul'>
+                <li>张三</li>
+                <li>张三</li>
+                <li>张三</li>
+                <li>张三</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h2>企业好友</h2>
+            <ul class = 'ul'>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h2>黑名单</h2>
+            <ul class = 'ul'>
+                <li>张小三</li>
+                <li>李小四</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script src="./myTools.js"></script>
+<script>
+    var fUl = $('#list');
+    var fcLi = fUl.children;
+
+    var ul = document.getElementsByClassName('ul');
+    for(var i = 0 ; i < ul.length ; i++) {
+        for(var j = 0 ; j < ul[i].children.length ; j++ ) {
+            ul[i].children[j].onmouseover = function () {
+                this.style.backgroundColor = 'pink'
+            }
+            ul[i].children[j].onmouseout = function () {
+                this.style.backgroundColor = '';
+            }
+        }
+    }
+
+
+    for (var i = 0; i < fcLi.length; i++) {
+        fcLi[i].handle = i;
+        var onOff = true;
+        fcLi[i].onclick = function () {
+
+
+            var cH2 = first(fcLi[this.handle]);
+            var cUl = last(fcLi[this.handle]);
+
+            if (cUl.style.display == 'block') {
+                cH2.style.background = "url(img/ico1.gif) no-repeat 5px center #6FF";
+                cUl.style.display = "none";
+            } else {
+                for (var i = 0; i < fcLi.length; i++) {
+                    last(fcLi[i]).style.display = 'none';
+                    first(fcLi[i]).style.background = 'url(img/ico1.gif) no-repeat 5px center #6FF';
+                }
+                cUl.style.display = 'block';
+                cH2.style.background = 'url(img/ico2.gif) no-repeat 5px center yellow';
+            }
+        }
+    }
+    
+</script>
+
+</html>

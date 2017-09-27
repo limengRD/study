@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        姓名：<input id="nameText" type="text"><br> 年龄：
+        <input id="ageText" type="text">
+        <input type="button" value="添加学生">
+        <input type="button" value="删除一行">
+    </div>
+    <table id="stuInfo" width="200" border="1">
+        <tbody>
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+            </tr>
+            <tr>
+                <td>江泽民</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>芙蓉</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>凤姐</td>
+                <td>28</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script src="myTools.js">
+
+</script>
+<script>
+    var aInp = document.getElementsByTagName('input');
+    var oStuInfo = document.getElementById('stuInfo');
+    var oTable = document.getElementById('stuInfo');
+    var oTbody = oTable.children[0];
+
+    // var oTbody = oTable.getElementsByTagName('tbody');
+    console.log(oTbody)
+    var oTr = oTbody.children; 
+    function changeColor() {
+        for(var i = 0; i<oTr.length ;i++){
+            if(i % 2 == 0) {
+                oTr[i].style.backgroundColor = "orange";
+            } else {
+                oTr[i].style.backgroundColor = "blue";
+            }
+        }
+    }
+    changeColor();
+    aInp[2].onclick = function() {
+        var userName = aInp[0].value;
+        var age = aInp[1].value;
+        var nameTd = document.createElement('td');
+        nameTd.innerHTML = userName;
+        var ageTd = document.createElement('td');
+        ageTd.innerHTML = age;
+        var newTr = document.createElement('tr');
+        newTr.appendChild(nameTd);
+        newTr.appendChild(ageTd);
+        oStuInfo.children[0].appendChild(newTr);
+        changeColor();
+    }
+    aInp[3].onclick = function () {
+        if(first(oTbody) != last(oTbody)){
+             oTbody.removeChild(last(oTbody));
+        }
+    }
+
+
+</script>
+</html>
