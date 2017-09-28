@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var urlStr = "http:// www.baidu.com:80/login/login.php?username=zhangsan&age=26&password=1234";
+        function fn(url) {
+            var index = url.indexOf('?');
+            var str = url.substring(index + 1);
+            var arr = str.split('&');
+            var obj = {};
+            for (var i = 0; i < arr.length; i++) {
+                var newArr = arr[i].split('=');
+                obj[newArr[0]] = newArr[1];
+            }
+            return obj;
+        }
+        console.log(fn(urlStr));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="走一圈" id="btn1" />
+    <div id="box"></div>
+</body>
+<script src="myTools.js"></script>
+<script>
+    var oInp1 = document.getElementById('btn1');
+    var oBox = document.getElementById('box');
+
+    oInp1.onclick = function () {
+        move(oBox,'left',8,800,function(){
+            move(oBox,'top',8,500,function(){
+                move(oBox,'left',8,100,function(){
+                    move(oBox,'top',8,100)
+                })
+            })
+        });
+    }
+
+    // function move (obj,attr,speed,target,fn) {
+    
+    //     clearInterval(timer);
+    //     var dis = parseFloat(getStyle(obj,attr));
+    //     speed = dis > target ? -speed : speed;
+    //     timer = setInterval(function () {
+    //         dis += speed;
+    //         if(dis <= target && speed<0 || dis >= target && speed>0) {
+    //             dis = target;
+    //         }
+    //         obj.style[attr] = dis + 'px';
+            
+    //         if(dis == target) {
+    //             clearInterval(timer);
+    //             timer = null;
+    //             fn&&fn();
+    //         }
+    //     },30)
+    // }
+</script>
+</html>

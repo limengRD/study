@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+    </style>
+    <script>
+            window.onload = function () {
+                console.log(document.getElementById('box'));
+            }
+            // 关闭窗口执行 (在刷新页面的时候相当于关闭又打开了会执行)
+            window.onunload = function () {
+                console.log('窗口关闭了');
+            }
+            window.onscroll = function() {
+                console.log('窗口滚动了');
+            }
+            window.onresize = function () {
+                console.log('你调整窗口大小了');
+            }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // window.alert(123);
+        // confirm() 返回true或者false
+        // prompt()返回值返回输入的值 点击取消返回null
+
+        var a = confirm("输入");
+        if(a) {
+           var num = prompt('输入数字');
+           if(num > 10) {
+               alert('大于10');
+           }else if (num < 10){
+               alert('小于10');
+           } else {
+               alert('等于10')
+           }
+
+        } else{
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="单击往前走" id="btn1" />
+    <input type='button' value="单击往回走" id="btn2" />
+    <div id="box"></div>
+</body>
+<script>
+    var oInp1 = document.getElementById('btn1');
+    var oInp2 = document.getElementById('btn2');
+    var oBox = document.getElementById('box');
+    var timer = null;
+    oInp1.onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            var speed = oBox.offsetLeft + 7;
+            if(speed >= 800) {
+                speed = 800;
+            }
+            oBox.style.left = speed + 'px';
+            if(speed == 800) {
+                clearInterval(timer);
+                timer = null;
+            }
+        },30);
+    }
+    oInp2.onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            speed = oBox.offsetLeft - 7;
+            if(speed <= 100) {
+                speed = 100;
+            }
+            oBox.style.left = speed + 'px';
+            if(speed == 100) {
+                clearInterval(timer);
+                timer = null;
+            }
+        },30)
+        
+    }
+</script>
+</html>

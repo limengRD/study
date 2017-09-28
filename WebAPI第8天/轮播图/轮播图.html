@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+
+    <script>
+
+    </script>
+</head>
+
+<body>
+
+    <!--外盒子-->
+    <div class="all" id='all'>
+        <!--内盒子-->
+        <div class="screen" id="screen">
+            <ul id="ul">
+                <li><img src="images/1.jpg" width="500" height="200" /></li>
+                <li><img src="images/2.jpg" width="500" height="200" /></li>
+                <li><img src="images/3.jpg" width="500" height="200" /></li>
+                <li><img src="images/4.jpg" width="500" height="200" /></li>
+                <li><img src="images/5.jpg" width="500" height="200" /></li>
+                <li><img src="images/1.jpg" width="500" height="200" /></li>
+            </ul>
+            <!--小方块-->
+            <ol>
+                <li style="background-color: red">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li style="display:none"></li>
+            </ol>
+            <!--左右小三角-->
+            <div id="arr">
+                <span id="left"><</span>
+                <span id="right">></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="myTools.js"></script>
+<script>
+    var bLeft = document.getElementById('left');
+    var bRight = document.getElementById('right');
+    var arr = document.getElementById('arr');
+    var all = document.getElementById('all');
+    var oUl = document.getElementsByTagName('ul')[0];
+    var oL = document.getElementsByTagName('ol')[0];
+    var oLi = oL.getElementsByTagName('li');
+    var index = null;
+    console.log(oLi)
+    var i = 0;
+    all.onmouseover = function () {
+        arr.style.display = 'block';
+        clearInterval(timer1);
+    }
+    all.onmouseout = function () {
+        arr.style.display = 'none';
+        timer1 = setInterval(function () {
+
+            bRight.click();
+        }, 2000)
+    }
+
+
+
+    timer1 = setInterval(function () {
+
+        bRight.click();
+    }, 1500)
+
+
+
+
+    bLeft.onclick = function () {
+        for (var i = 0; i < oLi.length; i++) {
+            if (oLi[i].style.backgroundColor == 'red' && i > 0) {
+                index = i;
+            }
+            if (oLi[i].style.backgroundColor == 'red' && i == 0) {
+                oLi[0].style.backgroundColor = '';
+                oLi[5].style.backgroundColor = 'red';
+                oUl.style.left = 5 * -500 + 'px';
+            }
+        }
+        console.log(index)
+        oLi[index - 1].click();
+    }
+
+    bRight.onclick = function () {
+
+        for (var i = 0; i < oLi.length; i++) {
+            if (oLi[i].style.backgroundColor == 'red') {
+                index = i;
+            }
+
+        }
+        oLi[index + 1].click();
+    }
+
+
+    for (var i = 0; i < oLi.length; i++) {
+        oLi[i].index = i;
+        if (i < 5) {
+            oLi[i].onclick = function () {
+                for (var i = 0; i < oLi.length; i++) {
+                    oLi[i].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'red';
+                clearInterval(oUl.timer);
+                move(oUl, 'left', 40, -500 * this.index);
+
+            }
+        }
+        if (i == 5) {
+            oLi[5].onclick = function () {
+                for (var i = 0; i < oLi.length; i++) {
+                    oLi[i].style.backgroundColor = '';
+                }
+                move(oUl, 'left', 40, -500 * this.index, function () {
+                    oUl.style.left = 0;
+                });
+                oLi[0].style.backgroundColor = 'red';
+            }
+        }
+
+    }
+
+
+</script>
+
+</html>

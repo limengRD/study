@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3500px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--外盒子-->
+    <div class="all" id='all'>
+        <!--内盒子-->
+        <div class="screen" id="screen">
+            <ul id="ul">
+                <li><img src="images/1.jpg" width="500" height="200" /></li>
+                <li><img src="images/2.jpg" width="500" height="200" /></li>
+                <li><img src="images/3.jpg" width="500" height="200" /></li>
+                <li><img src="images/4.jpg" width="500" height="200" /></li>
+                <li><img src="images/5.jpg" width="500" height="200" /></li>
+            </ul>
+            <!--小方块-->
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ol>
+            <!--左右小三角-->
+            <div id="arr">
+                <span id="left"><</span>
+                <span id="right">></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="myTools.js"></script>
+<script>
+    // //获取最大的盒子
+    // var all = document.getElementById('all');
+
+    // //获取左右按钮所在的盒子
+    // var arr = document.getElementById('arr');
+
+    // //获取左右按钮
+    // var aLeft = document.getElementById('left');
+    // var aRight = document.getElementById('right');
+
+    // //获取所有图片所在的ul
+    // var oUl = document.getElementById('ul');
+
+    // //获取ul下面的每个li
+    // var oLi = oUl.getElementsByTagName('li');
+
+    // //获取ol
+    // var ol = document.getElementsByTagName('ol')[0];
+
+    // //获取每个ol下面的li
+    // var li = ol.getElementsByTagName('li');
+    // //获取每个li的宽度
+    // var liW = oLi[0].offsetWidth;
+    // //声明一个全局变量记录当前的坐标
+    // var k = 1;
+    // oUl.style.left = -liW + 'px';
+    // //鼠标移动到最大的盒子上面 做的操作
+    // var timer1 = null;
+    // timer1 = setInterval(function (){
+    //     aRight.click();
+    // },1500)
+
+    // all.onmouseover = function () {
+    //     arr.style.display = 'block';
+    //     clearInterval(timer1);
+    // }
+
+    // //鼠标移出最大的盒子做的操作
+    // all.onmouseout = function () {
+    //     arr.style.display = 'none';
+    //     timer1 = setInterval(function () {
+    //         aRight.click();
+    //     },1500)
+    // }
+    // //克隆第一个li添加到ul的最后
+    // var newLi = oLi[0].cloneNode(true);
+    // oUl.appendChild(newLi);
+
+    // var newLi2 = oLi[oLi.length - 2].cloneNode(true);
+    // oUl.insertBefore(newLi2, first(oUl));
+    // // 点击右按钮使ul移动
+    // aRight.onclick = function () {
+    //     k++;
+    //     if (k >= oLi.length) {
+    //         k = 1;
+    //         oUl.style.left = -liW * k + "px";
+    //     }
+    //     move(oUl, 'left', 40, -liW * k, function () {
+    //         if (k == 6) {
+    //             oUl.style.left = -liW + 'px';
+    //             k = 1;
+    //             li[0].className = 'current';
+    //         }
+    //         //暴力清除
+    //         for (var i = 0; i < li.length; i++) {
+    //             li[i].className = '';
+    //         }
+    //         li[k - 1].className = 'current';
+    //     })
+
+
+    // }
+    // //点击左按钮使ul移动
+    // aLeft.onclick = function () {
+    //     k--;
+    //     if (k < 0) {
+    //         k = oLi.length - 2;
+    //         oUl.style.left = -liW * k + 'px';
+    //     }
+    //     move(oUl, 'left', 40, -liW * k, function () {
+    //         if (k == 0) {
+    //             k = oLi.length - 2;//5
+    //             console.log(k)
+    //             oUl.style.left = -liW * k + 'px';
+    //             li[k - 1].className = 'current';
+    //         }
+    //         //暴力清除
+    //         for (var i = 0; i < li.length; i++) {
+    //             li[i].className = '';
+    //         }
+    //         li[k - 1].className = 'current';
+    //     })
+
+    // }
+    // //鼠标移上改变颜色 切换图片
+    // li[0].className = 'current'
+    // for (var i = 0; i < li.length; i++) {
+
+    //     li[i].index = i;
+    //     li[i].onmouseover = function () {
+    //         for (var i = 0; i < li.length; i++) {
+    //             li[i].className = '';
+    //         }
+    //         k = this.index + 1;
+    //         this.className = 'current';
+    //         move(oUl, 'left', 40, -k * liW);
+
+    //     }
+
+    // }
+
+
+
+
+
+        alert(a);
+		
+	    var a;
+	    
+	    alert(a);
+	    
+	    function a() {
+	      alert(1);
+        }
+        
+        alert(a);
+        
+        var a = 2;
+        
+        alert(a); 
+        
+	    function a() {
+	      alert(3);
+        }
+        
+        alert(a); 
+        
+	    function b() {
+	      alert(4);
+        }
+        
+	    alert(a); 
+
+</script>
+
+</html>

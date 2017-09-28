@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="单击往前走" id="btn1" />
+    <input type='button' value="单击往回走" id="btn2" />
+    <input type="button" value="单击往下走" id="btn3" />
+    <input type='button' value="单击往上走" id="btn4" />
+    <div id="box"></div>
+</body>
+<script src="myTools.js"></script>
+<script>
+    var oInp1 = document.getElementById('btn1');
+    var oInp2 = document.getElementById('btn2');
+    var oInp3 = document.getElementById('btn3');
+    var oInp4 = document.getElementById('btn4');
+    var oBox = document.getElementById('box');
+    var timer = null;
+    oInp1.onclick = function () {
+        move(oBox,'left',8,800);
+    }
+    oInp2.onclick = function () {
+        move(oBox,'left',-8,100);
+    }
+    oInp3.onclick = function () {
+        move(oBox,'top',8,500)
+    }
+    oInp4.onclick = function () {
+        move(oBox,'top',-8,100)
+    }
+
+    function move (obj,attr,speed,target) {
+        clearInterval(timer);
+        var dis = parseFloat(getStyle(obj,attr));
+        timer = setInterval(function () {
+            dis += speed;
+            if(dis <= target && speed<0) {
+                dis = 100;
+            }
+            if(dis >= target && speed>0) {
+                dis = 800;
+            }
+            obj.style[attr] = dis + 'px';
+            
+            if(dis == 100) {
+                clearInterval(timer);
+                timer = null;
+            }
+        },30)
+    }
+</script>
+</html>

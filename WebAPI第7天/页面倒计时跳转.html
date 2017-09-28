@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1><span>5</span>秒钟后页面将跳转到<a href="http://www.itcast.cn">传智播客</a></h1>
+</body>
+<script>
+    var span = document.getElementsByTagName('span')[0];
+    var num = 5;
+    var timer = null;
+    timer = setInterval(function () {
+        num--;
+        span.innerHTML = num;
+        if(num == 0) {
+            clearInterval(timer);
+            timer = null;
+            location.href = 'bom.html';
+        }
+    },500)
+</script>
+</html>
