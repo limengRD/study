@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 322px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+            opacity: 1;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box" id="box">
+        <span id="closeButton"></span>
+        <div class="hd" id="headPart">
+            <img src="images/t.jpg" alt="">
+        </div>
+        <div class="bd" id="bottomPart">
+            <img src="images/b.jpg" alt="">
+        </div>
+    </div>
+</body>
+<script src="myTools.js"></script>
+<script>
+    var oSpan = document.getElementById('closeButton');
+    var bottomPart = document.getElementById('bottomPart');
+    var box = document.getElementById('box');
+    oSpan.onclick = function () {
+        startMove (bottomPart,{height:0 },function () {
+            startMove(box,{right:-322,opacity:0})
+        })
+    }
+</script>
+</html>

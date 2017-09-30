@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul , h2 { padding:0; margin:0; }
+        li { list-style:none; }
+        #list { width:240px; border:1px solid #333; margin:0 auto; }
+        
+        #list h2 { height:30px; line-height:30px; text-indent:20px; background:url(img/ico1.gif) no-repeat 5px center #6FF; color:#000; }
+        #list .active { background:url(img/ico2.gif) no-repeat 5px center #FF9; color:#000; }
+        #list ul { display:none; }
+        #list ul li { line-height:24px; border-bottom:1px solid #333; text-indent:24px; }
+        #list ul .hover { background:#6FF; }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>
+            <h2>我的好友</h2>
+            <ul>
+                <li>张三</li>
+                <li>张三</li>
+                <li>张三</li>
+                <li>张三</li>
+            </ul>
+        </li>
+        <li>
+            <h2>企业好友</h2>
+            <ul>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+            </ul>
+        </li>
+        <li>
+            <h2>黑名单</h2>
+            <ul>
+                <li>张小三</li>
+                <li>李小四</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script>
+    var oList = document.getElementById('list');
+    var aH2 = document.getElementsByTagName('h2');
+    var aUl = oList.getElementsByTagName('ul');
+    var onOff = true;
+    var obj = -100;
+    for(var i = 0 ; i < aH2.length ; i++) {
+        aH2[i].index = i;
+        aH2[i].onclick = function() {
+            if(obj != this.index){
+                onOff = true;
+            }
+            if(onOff){
+                for(var i = 0 ; i < aUl.length ; i++) {
+                    aUl[i].style.display = 'none';
+                    aH2[i].className = '';                    
+                }
+                aUl[this.index].style.display = 'block';
+                this.className = 'active';
+            }else {
+                aUl[this.index].style.display = 'none';
+                this.className = '';
+            }
+        onOff = !onOff;
+        obj = this.index;
+       
+        }
+        fn(aUl[i]);
+    }
+    function fn (ul) {
+        var oLi = ul.getElementsByTagName('li');
+        for(var i = 0 ; i < oLi.length ; i++) {
+            oLi[i].onmouseover = function () {
+                this.style.backgroundColor = 'red';
+            }
+            oLi[i].onmouseout = function () {
+                this.style.backgroundColor = '';
+            }
+        }
+    }
+</script>
+</html>
