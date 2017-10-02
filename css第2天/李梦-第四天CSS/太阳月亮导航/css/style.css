@@ -1,0 +1,27 @@
+a {
+	display: inline-block;
+	width: 120px;
+	height: 50px;
+	background-color: yellow;
+	line-height: 50px;
+	text-align: center;
+	text-decoration: none;
+	color:red;
+}
+span::after,span::before {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	content: " ";
+	background: url(../images/sun.png) 0 0 no-repeat;
+}
+a:hover {
+	background-color:blue;
+	color:#fff;
+}
+a:hover span::after {
+		background: url(../images/moon.png) 0 0 no-repeat;
+}
+a:hover span::before {
+		background: url(../images/moon.png) 0 0 no-repeat;
+}

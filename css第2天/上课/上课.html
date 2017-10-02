@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class</title>
+	<style>
+/*	    div,p,a {
+	    	width:100px;
+	    	height:100px;
+	    }
+		div {
+			background-color:red;
+			display:inline;
+		}
+		p {
+			background-color:blue;7
+			display:block;
+		}
+		a {
+			background-color:green;
+			display:inline-block;
+		}
+		.nav > li {
+			color:red;
+		}*/
+
+		body {
+		/*	background-image: url(ms.jpg);
+			background-position:center -20px;
+			background-attachment:fixed;
+*/			background:#cdcdcd url(ms.jpg) no-repeat fixed center -20px;
+		}
+		.site-r > a {
+			color:red;
+		}
+		.nav a {
+			color:green;
+		}
+		.nav a,.sitenav div {
+			font:20px "微软雅黑";
+		}
+		.nav > ul > li > a {
+			color:yellow;
+		}
+		a[title="www.baidu.com"]{
+			color:red;
+		}
+		a[title=youku]{
+			color:green;
+		}
+		a[title=souhu]{
+			color:blue;
+		}
+	/*	a[title^="www"]{
+			color:pink;
+		}*/
+	/*	a[title$=".com"]{
+			color:#000;
+		}*/
+		a[title*=u]{
+			color:orange;
+		}
+		.ppp::first-letter{
+			color:red;
+		}
+		.ppp::first-line{
+			color:green;
+		}
+		.ppp::selection{
+			color:skyblue;
+		}
+		.ppp::after{
+			content:"后";
+		}
+		.ppp::before{
+			content:"前"
+		}
+		.img {
+			width:200px;
+			height: 200px;
+			background-color:red;
+			background-image: url(mao.png);
+			background-repeat: no-repeat;
+/*			background-position:center center;*/
+			background-position:center 20px;
+			background-size: 100px;
+		}
+	</style>
+</head>
+<body>
+there nothing holdin me back
+	<div>123</div>
+	<div>123</div>
+	<div>123</div>	
+	<p>456</p>
+	<p>456</p>
+	<p>456</p>
+	<a href="">789</a>
+	<a href="">789</a>
+	<a href="">789</a>
+	<ul class="nav">
+		<li>123
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</li>
+	</ul>
+<div class="nav">    <!-- 主导航栏 -->
+  <ul>
+    <li><a href="#">公司首页</a></li>
+    <li><a href="#">公司简介</a></li>
+    <li><a href="#">公司产品</a></li>
+    <li>
+         <a href="#">联系我们</a>
+         <ul>
+                    <li><a href="#">公司邮箱</a></li>
+                    <li><a href="#">公司电话</a></li>
+         </ul>
+    </li>
+  </ul>
+</div>
+<div class="sitenav">    <!-- 侧导航栏 -->
+  <div class="site-l">左侧侧导航栏</div>
+  <div class="site-r"><a href="#">登录</a></div>
+</div>
+
+<a href="" title="baidu">百度</a>
+<a href="" title="youku">优酷</a>
+<a href="" title="souhu">搜狐</a>
+
+<a href="" title="www.baidu.com">百度</a>
+<a href="" title="www.youku.com">优酷</a>
+<a href="" title="www.souhu.com">搜狐</a>
+<p class="ppp">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+<div class="img">
+	
+</div>
+</body>
+</html>

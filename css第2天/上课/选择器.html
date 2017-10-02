@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>综合</title>
+	<style>
+	/*并集选择器*/
+		div,p,span,h1 {
+			color:red;
+		}
+	/*后代选择器*/
+		.king p {
+			font: italic 900 20px "微软雅黑";	
+		}
+	/*子元素选择器  因为继承了儿子元素的 color属性 所以孙子元素也变成红色*/
+		.son > li {
+			color:red;
+		}	
+
+
+
+
+	 /*hover伪类*/
+		.demo {
+			width:100px;
+			height:100px;
+			background-color:red;
+		}
+		.demo span {
+			color:#fff;
+		}
+		/*.demo:hover {
+			background-color:blue;
+		}*/
+		.demo:hover span {
+			color:#000;
+		}
+
+		/*课堂案例*/
+		.site-r > a{
+			color:red;	
+		}
+		.nav ul li a {
+			color:skyblue;
+		}
+		.nav,.sitenav {
+			font: 20px "微软雅黑";
+		}
+        .nav > ul > li > a {
+        	color: green;
+        }
+
+
+        /*属性选择器*/
+        .type a[title] {
+        	color: red;
+        }
+        .type a[title = xiaomi] {
+        	color: green;
+        }
+        .type a[title ^= 我是] {
+        	color: pink;
+        }
+        .type a[title $= 百度] {
+        	color: yellow;
+        }
+        .type a[title *= a ] {
+        	font: 40px "宋体";
+        }
+        /*伪元素选择器*/
+        .element p::first-letter {
+        	color:skyblue;
+        	font:30px "微软雅黑";
+        }
+        .element p:nth-child(2)::first-line {
+        	color:pink;
+        } 
+        .element p::selection {
+        	color:green;
+        }
+
+
+
+
+
+  	</style>
+</head>
+<body>
+	<div>刘德华</div>	
+	<p>张学友</p>
+	<span>郭富城</span>
+	<h1>凤姐</h1>
+	<h1>凤哥</h1>
+	<h1 class="feng">凤</h1>
+	<!-- 后代选择器 -->
+	<div class="king">王者荣耀
+		<p>鲁班</p>
+		<p>诸葛亮</p>
+		<div>
+			<p>
+				孙子元素
+			</p>
+		</div>
+	</div>
+
+  	<!-- 伪类选择器-->
+
+	<div class="demo">
+		<span>
+			这是一个例子
+		</span>
+	</div>
+
+	<!-- 子选择器 -->
+	<div class="son">
+		<ul>
+			<li>儿子
+				<ul>
+					<li>孙子</li>
+				</ul>
+			</li>
+			<li>儿子
+				<ul>
+					<li>孙子</li>
+				</ul>
+			</li>	
+		</ul>	
+	</div>
+	<!-- 课堂案例 -->
+		<!-- 主导航栏 -->
+    <div class="nav">    
+		<ul>
+		    <li><a href="#">公司首页</a></li>
+		    <li><a href="#">公司简介</a></li>
+		    <li><a href="#">公司产品</a></li>
+		    <li>
+		    	<a href="#">联系我们</a>
+		    	<ul>
+		    		<li><a href="#">公司邮箱</a></li>
+		    		<li><a href="#">公司电话</a></li>
+		    	</ul>
+		    </li>
+		</ul>
+	</div>
+	<!-- 侧导航栏 -->
+	<div class="sitenav">    
+		<div class="site-l">左侧侧导航栏</div>
+		<div class="site-r"><a href="#">登录</a></div>
+	</div>
+
+	<!-- 属性选择器 -->
+	<div class="type">
+		<a href="#" title="xiaoami"> 小米 </a>
+	    <a href="#" title="我是a一个百度">百度</a>
+	    <a href="#" title="我是a一个新浪">新浪</a>
+	    <a href="#">搜狐</a>
+	    <a href="#">网易</a>
+	    <a href="#">土豆</a>
+		<input type="text" value="文本框">
+		<input type="text" value="文本框">
+		<input type="text" value="文本框">
+		<input type="submit">
+		<input type="submit">
+		<input type="submit">
+		<input type="reset">
+		<input type="reset">
+		<input type="reset">
+	</div>
+	<div class="element">
+   	<h1>freestyle</h1>
+    <p>英语词汇，一般指即兴的、随性的随意的发挥，例如HIPHOP说唱中的freestyle就是即兴说唱的意思。2017年6月，因吴亦凡屡次提起而火遍网络。</p>
+   <p>吴亦凡爆红的freestyle，其实是嘻哈选手的基本功，也是《中国有嘻哈》节目中的一个环节名称。</p>
+   <h1>freestyle</h1>
+   <h1>freestyle</h1>
+   <p>发展经过编辑从吴亦凡口里说出来，freestyle就变得很魔性了，因为他见人都会问一句，你有freestyle吗？两个选手难以选择，还是这句，“你们有freestyle吗”？</p>
+</div>
+
+</body>
+</html>
