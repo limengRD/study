@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+    #box1 #box3 p  {    
+      color:blue;
+    } 
+    /* 当权重一样（都选中元素）的时候，会执行层叠性（后来者居上） */
+    /*继承时考虑 离标签远近*/
+
+
+		#box1 #box2 p  {   
+			color:green;
+		}
+		
+	
+	</style>
+</head>
+<body>
+	<div id="box1" class="spec1">
+		<div id="box2" class="spec2">
+			<div id="box3" class="spec3">
+				<p>文字</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

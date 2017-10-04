@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div p{     /*没有选中em标签 继承的权重为0*/
+			color:red;
+		}
+		#box{	   
+			color:blue;
+		} 
+
+		span {
+			color:green; /*谁离标签最近*/
+		}
+
+		/*这里我们不参考  权重 （权重一样的情况） 参考优先级就近原则（和层叠性有区别：层叠性要求权重（继承另外有参考）、选择器、样式属性都冲突的时候 ，才参考层叠性）
+		就近原则：单指权重相同的时候  ，离得最近的元素（指的是在html中元素之间的靠近：例如：这里哪个元素离“大熊猫”这三个字比较近 （p））的选择器会被执行
+	    都是继承的情况也参考 	就近原则
+		*/
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p> 
+			<span>
+				<em>大熊猫</em>
+			</span>
+		</p>
+	</div>
+</body>
+</html>

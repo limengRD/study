@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.header {
+	height: 63px;
+	background-color: #fff;
+}
+.header-in {
+	width: 980px;
+	height: 63px;
+	margin: 0 auto;
+}
+.logo {
+	width: 179px;
+	height: 25px;
+	float: left;
+	margin-top: 19px;
+}
+.search {
+	float: right;
+	width: 199px;
+	height: 31px;
+	margin-top: 16px;
+}
+.search input {
+	border: 0;
+	width: 158px;
+	height: 31px;
+	background: url(../images/input.png);
+	background-color: #f5f5f5;
+	padding-left: 10px;
+	outline: none;
+	float: left;
+}
+.search button {
+    width: 33px;	
+    height: 31px;
+	background: url(../images/button.png) no-repeat;
+	float: left;
+	outline: none;
+	border: 0;
+}
+.nav {
+	height: 55px;
+	margin: 0 auto;
+	background: url(../images/nav-bg.png) repeat-x;
+	border-top: 1px solid #ccc;
+}
+.nav-in {
+	width: 980px;
+	margin: 0 auto;
+}
+.nav-in ul {
+	height: 55px;
+	list-style: none;
+}
+.nav-in ul li {
+    float: left;
+	text-align: center;
+	background: url(../images/nav-line.png) no-repeat right;
+    position: relative;
+}
+.hot {
+    position: absolute;
+    top: -15px; 
+    left: 50px;
+}
+.nav-in ul li a{
+	width: 130px;
+	height: 55px;
+	font: 700 14px "宋体";
+	color: #333;
+	line-height: 55px;
+	text-decoration: none;
+	display: block;
+}
+.nav-in ul li:hover a{
+	color: green;
+	background-color: #cdcdcd;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.2) inset;
+}
+.banner {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+.banner span {
+    position: absolute;
+    top: 10px;
+    right: -120px;
+}
+.demo {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #cdcdcd;
+}
+.demo a {
+    margin-top: 100px;
+}
+.notice {
+    height: 29px; 
+    background-color: #fbfbfb;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+ }
+.notice-in {
+    width: 980px;
+    margin: 0 auto;  
+    line-height: 29px;
+ }
+.notice-in p {
+    font-size: 12px;
+    float: left; 
+ }
+.notice-in p a {
+    color: #000;
+    text-decoration: none;
+ }
+.notice-in p a:hover {
+    color: green;
+    text-decoration: underline;
+ }
+.notice span {
+    float: right; 
+    margin-top: 5px;
+ }
+.main {
+    width: 980px;
+    height: 228px;
+    margin: 14px auto 50px auto;
+}
+.main h4 {
+    height: 38px;
+    font-size: 12px;
+    color: #7ab800;
+    background: url(../images/arrow.png) no-repeat left center;
+    padding-left: 22px;
+    margin-left: 5px;
+    line-height: 38px;
+}
+.goods .image {
+    text-align: center;
+}
+.goods {
+    width: 310px;
+    height: 228px;
+    border: 1px solid #efefef;
+    float: left;
+}
+.news {
+    width: 373px;
+    height: 228px;
+    border: 1px solid #efefef;
+    float: left;
+    margin-left: 12px;
+}
+.news ul {
+    list-style: none; 
+    padding: 0px 22px;
+}
+.news ul li {
+    height: 27px;
+    line-height: 27px;
+    border-bottom: 1px dashed #dcdcdc;
+    font-size: 12px;
+}
+.news ul li a {
+    color: #666;
+    text-decoration: none;
+}
+.news ul li a:hover {
+    color: #98cb00;
+    text-decoration: underline;
+}
+.news ul li:first-child a {
+    font-weight: bold; 
+    color: red;
+}
+.tec {
+    width: 267px;
+    height: 228px;
+    border: 1px solid #efefef;
+    float: left;
+    margin-left: 12px;
+}
+.tec ul {
+    list-style: none;
+    padding: 0px 22px;
+}
+.tec ul li {
+    border-left: 3px solid #98cb00;
+    height: 13px;
+    line-height: 13px;
+    margin-bottom: 8px;
+    padding-left: 5px;
+
+}
+.tec ul li a {
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+.tec p {
+    font-size: 12px;
+    color: #666;
+    padding: 40px 22px 0;
+}
+.footer {
+    height: 306px;
+    background-color: #2d2d2d;
+}
+.footer-main {
+    height: 205px;
+    border-bottom: 1px dashed #414141; 
+}
+.footer-main-in {
+    padding:15px 0px 0px 20px;
+    width: 980px;
+    margin: 0 auto;
+}
+.footer-main-in dl {
+    width: 110px;
+    float: left;
+}
+.footer-main-in dl dt {
+    color: #fff;
+    height: 35px;
+    font-size: 14px;
+}
+.footer-main-in dl dd {
+    height: 20px;
+    color: #c7c7c7;
+}
+.footer-main-in dl dd a {
+    font-size: 12px;
+    color: #717171;
+    text-decoration: none;
+}
+.footer-main-in dl dd a:hover {
+    text-decoration: underline;
+}
+.footer-main-in span {
+    float: right
+}
+.footer-bottom-in {
+    width: 980px;
+    margin: 0 auto;
+}
+.footer-bottom-in {
+    font-size: 12px;
+    text-align: center;
+}

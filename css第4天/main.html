@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>main</title>
+	<style>
+	    * {
+	    	padding: 0;
+	    	margin: 0;
+	    }
+		.banner,	
+		.main,
+		.footer {
+			text-align: center;
+			margin: 0 auto;
+			width: 1360px;	
+			border: 1px dashed #ccc;
+			margin-bottom: 10px;
+		}	
+		.top {
+			border: 1px dashed #ccc;
+			text-align: center;
+			height: 100px;
+			background-color: red;
+			margin-bottom: 10px;
+		}
+		.banner {
+			height: 220px;
+			background-color: skyblue;
+		}
+		.main {
+
+			background-color: pink;
+		}
+		.left {
+			height: 400px;
+			width: 560px;
+			float: left;
+			background-color: #cdcdcd;
+			margin-right: 10px;
+		}
+		.right {
+			height: 400px;
+			width: 790px;
+			float: right;
+			background-color: #cdcdcd;
+		}
+		.footer {
+			height: 300px;
+			background-color: black;
+			color: #fff;
+		}
+		.clearfix:after {
+			content: ".";
+			display: block;
+			height: 0px;
+			visibility: hidden;
+			clear: both;
+		}
+		.clearfix {
+			*zoom: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">top</div>
+	<div class="banner">banner</div>
+	<div class="main clearfix">
+		<div class="left">left</div>
+		<div class="right">right</div>
+<!-- 		<div style="clear: both"></div> -->
+	</div>
+	<div class="footer">footer</div>	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件</title>
+	<style>
+		.name input {
+			background-color: yellow;
+			outline-style: none;
+			border: 1px dashed #cdcdcd;
+			margin: 20px;
+		}	
+		.nick input {
+			border: none;
+			border-bottom: 1px dashed red;
+			margin: 20px;
+		}
+		.site input {
+			background: url(search.png) no-repeat right center;
+			margin: 20px;
+		}
+		.name input:focus {
+			background-color: red;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="name"><label>姓名<input type="text"></label></div>
+	<div class="nick"><label>昵称<input type="text"></label></div>
+	<div class="site"><label>住址<input type="text"></label></div>
+</body>
+</html>

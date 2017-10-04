@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    .main {
+			background-color: skyblue;	
+			/*overflow: hidden;*/
+	    }
+	    .top {
+	    	height: 100px;
+	    	width: 200px;
+	    	background-color: pink;
+	    	float: left;
+	    }
+	    .bottom {
+	    	height: 200px;
+	    	width: 100px;
+	    	background-color: red;
+	    	float: left;
+	    }
+	    .down {
+	    	height: 300px;
+	    	width: 300px;
+	    	background-color: green;
+	    }
+	    .clearfix:after {
+	    	content: ".";
+	    	display: block;
+	    	height: 0;
+	    	visibility: none;
+	    	clear: both;
+	    }
+	    .clearfix {
+	    	*zoom: 1;
+	    }
+	</style>
+</head>
+<body>
+	<div class="main clearfix">
+		<div class="top"></div>
+		<div class="bottom"></div>
+<!-- 		<div style="clear:both"></div> -->
+	</div>
+	<div class="down"></div>
+</body>
+</html>
