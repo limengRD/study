@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    * {
+	    	padding: 0;
+	    	margin: 0;
+	    }
+	    ul {
+	    	list-style: none;
+	    }
+		.a {
+			width: 310px;
+			height: 190px;
+			padding: 10px;
+			border: 1px solid #cdcdcd;
+			position: relative;
+
+		}
+		.a img:first-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.a img:last-child {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		.center {
+			width: 300px;
+			height: 300px;
+			border: 1px solid #cdcdcd;
+			line-height: 330px;
+		}
+		.main {
+			width: 520px;
+			height: 280px;
+			position: relative;
+		}
+		.arrow-l,.arrow-r {
+			display: block;
+			width: 24px;
+			height: 36px;
+			position: absolute;
+		}
+		.arrow-l {
+			top: 50%;
+			left: 0;
+			margin-top: -18px;
+		}
+		.arrow-r {
+			top: 50%;
+			right: 0;
+			margin-top: -18px;
+		}
+		.main ul {
+			height: 14px;
+			width: 69px;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			margin-left: -35px;
+			background: rgba(255,255,255,.4);
+			border-radius: 31px;
+		}
+		.main li {
+			float: left;
+			width: 9px;
+			height: 9px;
+			line-height: 20px;
+			border-radius: 50%;	
+			background-color: #fff;
+			margin: 2px;
+		}
+		.main li a {
+			text-align: center;
+		}
+    </style>
+</head>
+<body>
+	<div class="a">
+	    <img src="images/top_tu.gif" alt="">
+	    <img src="images/adv.jpg" alt="">
+	    <img src="images/br.gif" alt="">
+	</div>	
+	<div class="main">
+		<img src="images/taobao.jpg" alt="">
+		<a class="arrow-l"><img src="images/left.png" alt=""></a>
+		<a  class="arrow-r"><img src="images/right.png" alt=""></a>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</html>
