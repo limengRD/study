@@ -1,0 +1,171 @@
+.main {
+	height: 480px;
+
+}
+.main-col1 {
+	width: 190px;
+	height: 100%;
+	background-color: red;
+	color: #fff;
+	font-size: 14px;
+}
+.main-col1 ul {
+	padding: 20px 0;
+}
+.main-col1 ul li {
+	padding-left: 12px;
+	height: 29px;
+	line-height: 26px;
+}
+.main-col1 ul li:hover {
+	background-color: #9c9698;
+}
+.main-col1 ul li a {
+	color: #fff;
+	font-size: 14px;
+	margin: 0 3px;
+}
+.main-col1 ul li a:hover {
+	color: #f10215;
+}
+.main-col2 {
+	width: 790px;
+	height: 100%;
+	margin-left: 10px;
+}
+.main-col2-top {
+	position: relative;
+}
+.main-col2-top a {
+	width: 790px;
+	height: 340px;
+	display: block;
+}
+.main-col2-top .arrow-l, .main-col2-top .arrow-r{
+	width: 30px;
+	height: 60px;
+	background: rgba(0,0,0,0.3);
+	font-size: 20px;
+	text-align: center;
+	line-height: 60px;
+	color: #fff;
+}
+.main-col2-top .arrow-l {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+
+}
+.main-col2-top .arrow-r {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.main-col2-top ul {
+	height: 20px;
+	width: 167px;
+	background: rgba(255,255,255,0.5);
+	border-radius: 10px;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-left: 5px;
+}
+.main-col2-top ul li {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	background-color: #fff;
+	float:left;
+	margin: 4px;
+}
+.main-col2-bottom {
+	margin-top: 10px;
+}
+.main-col2-bottom img {
+	width: 390px;
+	height: 130px;
+	vertical-align: top;
+}
+.main-col3 {
+	width: 190px;
+	height:100%;
+	background-color: #fff;
+}
+.login {
+	padding: 15px;
+	font-size: 12px;
+	border-bottom: 1px solid #ccc;
+}
+.login-t {
+	height: 60px;
+}
+.login-b a {
+	display: inline-block;
+	width: 70px;
+	height: 20px;
+	border: 2px solid #f10215;
+	text-align:center;
+	line-height: 20px;
+	color: #f10215;
+}
+.login-b a:hover {
+	background-color: #f10215;
+	color: #fff;
+}
+.news {
+	padding: 8px 13px;
+	border-bottom: 1px solid #ccc;
+}
+.news-t {
+	border-bottom: 1px solid #ccc;
+	height: 19px;
+	position: relative;
+}
+.news-t a {
+	float: left;
+	height: 17px;
+	line-height: 17px;
+}
+.cuxiao {
+	width: 38px;
+	border-right: 1px solid #ccc;
+}
+.gg {
+	margin-left: 15px;
+}
+.news-t .more {
+	float: right;
+}
+.news-t div {
+	width: 28px;
+	height: 2px;
+	background-color: red;
+	position: absolute;
+	bottom: -1px;
+}
+.news-b {
+	padding-top: 15px;
+	font-size: 12px;
+	color: #999;
+}
+.news-b li {
+	line-height: 23px;
+}
+.expand {
+	overflow: hidden;
+	height: 221px;
+}
+.expand ul {
+	width: 195px;
+}
+.expand li {
+	float: left;
+	height: 74px;
+	width: 47px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
