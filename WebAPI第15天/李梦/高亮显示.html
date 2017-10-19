@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('ul li').mouseover(function () {
+            $(this).css('background', 'red');
+        })
+        $('ul li').mouseout(function () {
+            $(this).css('background', '');
+        })
+    })
+
+</script>
+
+<body>
+    <ul>
+        <li>这是第1个li 的内容</li>
+        <li>这是第2个li 的内容</li>
+        <li>这是第3个li 的内容</li>
+        <li>这是第4个li 的内容</li>
+        <li>这是第5个li 的内容</li>
+        <li>这是第6个li 的内容</li>
+    </ul>
+</body>
+
+</html>

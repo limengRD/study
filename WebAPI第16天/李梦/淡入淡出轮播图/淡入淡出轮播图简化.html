@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				margin: 50px auto;
+				width: 771px;
+				height: 245px;
+				position: relative;
+			}
+			
+			ol,
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			#list {
+				width: 771px;
+				height: 245px;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#list li {
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			
+			ol#nav li {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: orange;
+				float: left;
+				margin-left: 10px;
+				text-align: center;
+				color: #fff;
+				line-height: 30px;
+				cursor: pointer;
+			}
+			
+			#nav {
+				position: absolute;
+				left: 30px;
+				bottom: 5px;
+			}
+			
+			ol#nav .active {
+				background: #f00;
+			}
+		</style>
+		<script src="jq.js"></script>
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+				
+				var timer = null;
+				// 设定全局变量 用来控制 图片一张张切换  计数器
+				var k = 0;
+				
+				//  给所有的导航小圆点 加上 鼠标移上事件  移到谁身上   让自己加上类 active  让谁对应的那个大图的li 显示出来  
+			
+				$("#nav>li").mouseenter(function(){
+					k = $(this).index();
+					core();
+					
+				})
+				
+				//自动播放起来　　定时器开启
+				autoPlay();
+				function autoPlay(){
+					timer = setInterval(function(){
+						k++;
+						(k>$("#nav>li").length-1)&&(k = 0);
+						core();
+					},2000);
+				}
+				
+				
+				function core(){
+					$("#nav>li").eq(k).addClass("active").siblings().removeClass("active");
+					$("#list>li").eq(k).stop().fadeIn(800).siblings().stop().fadeOut(800);
+				}
+				
+				// 移到box身上 就让定时器停止  移开box 让定时器开启来
+				$("#box").mouseenter(function(){
+					clearInterval(timer);
+					timer =null;
+				})
+				$("#box").mouseleave(function(){
+					autoPlay();
+				})
+				
+			})
+		</script>
+	</head>
+	<body>
+		<!-- block  inline   inline-block  table   list-item-->
+		<div id="box">
+			<ul id="list">
+				<li style="display: list-item;"><img src="img/1.jpg" alt=""></li>
+				<li><img src="img/2.jpg" alt=""></li>
+				<li><img src="img/3.jpg" alt=""></li>
+				<li><img src="img/4.jpg" alt=""></li>
+			</ul>
+			<ol id="nav">
+				<li class="active">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ol>
+		</div>
+	</body>
+</html>
+

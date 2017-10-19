@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 380px;
+            height: 250px;
+            background-color: #ccc;
+            padding: 30px;
+            margin: 50px auto;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        #strong {
+            margin-top: 5px;
+            height: 16px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .finish {
+            color: green;
+        }
+        .one {
+            width:40px;
+            background:red;
+        }
+        .two {
+            width: 80px;
+            background: orange;
+        }
+        .three {
+            width: 120px;
+            background: green;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="box">
+        QQ号：<input type="text" id="txtQQ"><span></span><br><br> 邮&nbsp;&nbsp;箱：
+        <input type="text" id="txtEMail"><span></span><br><br> 手&nbsp;&nbsp;机：
+        <input type="text" id="txtPhone"><span></span><br><br> 生&nbsp;&nbsp;日：
+        <input type="text" id="txtBirthday"><span></span><br><br> 姓&nbsp;&nbsp;名：
+        <input type="text" id="txtName"><span></span><br><br> 密码强度: <input type="password" id="txtPassword"><span></span>
+        <div id="strong"></div>
+    </div>
+
+</body>
+<script>
+    var txtQQ = document.getElementById('txtQQ');
+    var txtEMail = document.getElementById('txtEMail');
+    var txtPhone = document.getElementById('txtPhone');
+    var txtBirthday = document.getElementById('txtBirthday');
+    var txtName = document.getElementById('txtName');
+    var password = document.getElementById('txtPassword');
+    var aSpan = document.getElementsByTagName('span');
+    var strong = document.getElementById('strong')
+    txtQQ.onblur = function () {
+        var str = txtQQ.value;
+        var re = /^[1-9][0-9]{4,9}$/;
+        var result = re.test(str);
+        if (str == '') {
+            aSpan[0].innerHTML = '请输入内容';
+            aSpan[0].className = '';
+        } else {
+            if (result) {
+                aSpan[0].innerHTML = '输入正确';
+                aSpan[0].className = 'finish';
+            } else {
+                aSpan[0].innerHTML = '输入错误,请重新输入';
+                aSpan[0].className = 'error';
+            }
+        }
+    }
+
+    txtEMail.onblur = function () {
+        var str = txtEMail.value;
+        var re = /^[1-9a-zA-Z][\w]+@[a-z0-9]+(\.[a-z]+){1,3}$/;
+        var result = re.test(str);
+        if (str == '') {
+            aSpan[1].innerHTML = '请输入内容';
+            aSpan[1].className = '';
+        } else {
+            if (result) {
+                aSpan[1].innerHTML = '输入正确';
+                aSpan[1].className = 'finish';
+            } else {
+                aSpan[1].innerHTML = '输入错误,请重新输入';
+                aSpan[1].className = 'error';
+            }
+        }
+
+    }
+
+    txtPhone.onblur = function () {
+        var str = txtPhone.value;
+        var re = /^1[3-8]\d{9}$/;
+        var result = re.test(str);
+        if (str == '') {
+            aSpan[2].innerHTML = '请输入内容';
+            aSpan[2].className = '';
+        } else {
+            if (result) {
+                aSpan[2].innerHTML = '输入正确';
+                aSpan[2].className = 'finish';
+            } else {
+                aSpan[2].innerHTML = '输入错误,请重新输入';
+                aSpan[2].className = 'error';
+            }
+        }
+
+    }
+
+    txtBirthday.onblur = function () {
+        var str = txtBirthday.value;
+        var re = /^(18[89][0-9]|19\d{2}|200\d|201[0-7])-([13578]-[012]\d|[13578]-0[1-9]|0[13578]-3[01]|10-[12]\d|10-0[1-9]|10-3[01]|12-[12]\d|12-0[1-9]|12-3[01]|[469]-[12]\d|[469]-0[1-9]|[469]-30|11-[12]\d|11-0[1-9]|11-30|02-[12]\d|02-0[1-9])$/;
+        var result = re.test(str);
+        if (str == '') {
+            aSpan[3].innerHTML = '请输入内容';
+            aSpan[3].className = '';
+        } else {
+            if (result) {
+                aSpan[3].innerHTML = '输入正确';
+                aSpan[3].className = 'finish';
+            } else {
+                aSpan[3].innerHTML = '输入错误,请重新输入(正确格式:2008-10-01)';
+                aSpan[3].className = 'error';
+            }
+        }
+
+    }
+
+    txtName.onblur = function () {
+        var str = txtName.value;
+        var re = /^[\u4e00-\u9fa5]{2,4}$/;
+        var result = re.test(str);
+        if (str == '') {
+            aSpan[4].innerHTML = '请输入内容';
+            aSpan[4].className = '';
+        } else {
+            if (result) {
+                aSpan[4].innerHTML = '输入正确';
+                aSpan[4].className = 'finish';
+            } else {
+                aSpan[4].innerHTML = '输入错误,请重新输入';
+                aSpan[4].className = 'error';
+            }
+        }
+
+    }
+
+    password.oninput = function () {
+        var str = password.value;
+        if (str == '') {
+            aSpan[5].innerHTML = '请输入内容';
+            strong.className = '';
+        } else if(str.length < 5){
+            aSpan[5].innerHTML = '密码长度过低';
+            strong.className = '';
+        }else {
+            if(/\d/.test(str) && /[a-zA-Z]/.test(str)&&/[_!@#$]/.test(str)){
+                aSpan[5].innerHTML = '密码强度强';
+                strong.className = 'three';
+            }
+             else if(/\d/.test(str) && /[a-zA-Z]/.test(str)){
+                aSpan[5].innerHTML = '密码强度较弱';
+                strong.className = 'two';
+            }else if (/\d/.test(str)||/[a-zA-Z]/.test(str)) {
+                aSpan[5].innerHTML = '密码强度弱';
+                strong.className = 'one';
+            }
+        }
+    }
+
+
+</script>
+
+</html>

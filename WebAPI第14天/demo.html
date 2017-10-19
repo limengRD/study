@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var str = 'haj123sdk54hask33dknalsd789';  
+    // var arr = [];
+    // for(var i = 0 ; i < str.length ; i ++) {
+    //     if(str[i] >= "0"  && str[i] <= "9") {
+    //         arr.push(str[i]);
+    //     }
+    // }
+    // console.log(arr);
+    var str = '菲称仁爱礁附近17艘中国船均在菲监视之下';
+		// 菲   中国船   监视之下
+    var re = /菲|中国船|监视之下/g;
+    var result = str.replace(re,function ($) {
+        var str = '';
+        for(var i = 0 ; i < $.length ; i++) {
+            str += '*';
+        }
+        return str;
+    })
+    console.log(result);
+    <div></div>
+</script>
+</html>
+
+ 

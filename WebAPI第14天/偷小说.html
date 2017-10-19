@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#text,#box {
+				width: 400px;
+				height: 300px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="提取小说" /><br />
+		<textarea id="text"></textarea>
+		<p>下面是提取后的文本内容<<</p>
+
+	</body>
+	<script type="text/javascript">
+		
+        var str = '<p>aaa << </p><div>我是谁</div><p>12,3123</p>'
+		var  re = /<[^>]>+/ig;
+		var result = str.replace(re,'');
+        console.log(result);
+	</script>
+</html>
