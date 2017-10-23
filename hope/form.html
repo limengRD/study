@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        form {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        input {
+            height: 30px;
+            width: 300px;
+        }
+        textarea {
+            margin-top: 10px;
+            width: 300px; 
+            height: 300px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form action="put.php" method="get">
+            <label for="">姓名<input type="text" name="name"></label><br>
+            <label for="">祝福<br><textarea name="text" id="" cols="30" rows="10"></textarea></label>
+            <input type="submit" name="" id="" value="发送祝福">
+        </form>
+    </div>
+
+</body>
+
+</html>
