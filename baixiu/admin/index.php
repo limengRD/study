@@ -1,59 +1,25 @@
 <?php
-require_once '../config.php';
-session_start();
 
-if (empty($_SESSION['current_login_user'])) {
-  header('Location: /admin/login.php');
-}
+// // 校验数据当前访问用户的 箱子（session）有没有登录的登录标识
+// session_start();
 
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS , DB_NAME);
+// if (empty($_SESSION['current_login_user'])) {
+//   // 没有当前登录用户信息，意味着没有登录
+//   header('Location: /admin/login.php');
+// }
 
-  if(!$conn) {
-    exit('<h1>连接数据库失败</h1>');
-  }
+require_once '../functions.php';
 
-  //评论
-  $query = mysqli_query($conn,"select * from comments");
-  if(!$query) {
-    $GLOBALS['message'] = '查询过程失败';
-    return;
-  }
-  $comments_count = 0;
-  $comments_held_count = 0;
-  while($comments = mysqli_fetch_assoc($query)){
-    if($comments['status'] == 'held') {
-      $comments_held_count +=1;
-    }
-    $comments_count += 1;
-  }
+// 判断用户是否登录一定是最先去做
+xiu_get_current_user();
 
-  //文章
-  $query1 = mysqli_query($conn,"select * from posts");
-  if(!$query) {
-    $GLOBALS['message'] = '查询过程失败';
-    return;
-  }
-  $posts_count = 0;
-  $posts_status_count = 0;
-  while($posts = mysqli_fetch_assoc($query1)){
-    if($posts['status'] == 'drafted') {
-      $posts_status_count +=1;
-    }
-    $posts_count += 1;
-  }
+// 获取界面所需要的数据
+// 重复的操作一定封装起来
+$posts_count = xiu_fetch_one('select count(1) as num from posts;')['num'];
 
-  //分类
+$categories_count = xiu_fetch_one('select count(1) as num from categories;')['num'];
 
-  
-  $query2 = mysqli_query($conn,"select * from categories");
-  if(!$query) {
-    $GLOBALS['message'] = '查询过程失败';
-    return;
-  }
-  $categories_count = 0;
-  while($categories = mysqli_fetch_assoc($query2)){
-    $categories_count += 1;
-  }
+$comments_count = xiu_fetch_one('select count(1) as num from comments;')['num'];
 
 ?>
 <!DOCTYPE html>
@@ -86,13 +52,15 @@ $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS , DB_NAME);
               <h3 class="panel-title">站点内容统计：</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item"><strong><?php echo $posts_count;?></strong>篇文章（<strong><?php echo $posts_status_count;?></strong>篇草稿）</li>
-              <li class="list-group-item"><strong><?php echo $categories_count;?></strong>个分类</li>
-              <li class="list-group-item"><strong><?php echo $comments_count;?></strong>条评论（<strong><?php echo $comments_held_count;?></strong>条待审核）</li>
+              <li class="list-group-item"><strong><?php echo $posts_count; ?></strong>篇文章（<strong>2</strong>篇草稿）</li>
+              <li class="list-group-item"><strong><?php echo $categories_count; ?></strong>个分类</li>
+              <li class="list-group-item"><strong><?php echo $comments_count; ?></strong>条评论（<strong>1</strong>条待审核）</li>
             </ul>
           </div>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <canvas id="chart"></canvas>
+        </div>
         <div class="col-md-4"></div>
       </div>
     </div>
@@ -103,6 +71,40 @@ $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS , DB_NAME);
 
   <script src="/static/assets/vendors/jquery/jquery.js"></script>
   <script src="/static/assets/vendors/bootstrap/js/bootstrap.js"></script>
+  <script src="/static/assets/vendors/chart/Chart.js"></script>
+  <script>
+    var ctx = document.getElementById('chart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        datasets: [
+          {
+            data: [<?php echo $posts_count; ?>, <?php echo $categories_count; ?>, <?php echo $comments_count; ?>],
+            backgroundColor: [
+              'hotpink',
+              'pink',
+              'deeppink',
+            ]
+          },
+          {
+            data: [<?php echo $posts_count; ?>, <?php echo $categories_count; ?>, <?php echo $comments_count; ?>],
+            backgroundColor: [
+              'hotpink',
+              'pink',
+              'deeppink',
+            ]
+          }
+        ],
+
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: [
+          '文章',
+          '分类',
+          '评论'
+        ]
+      }
+    });
+  </script>
   <script>NProgress.done()</script>
 </body>
 </html>
