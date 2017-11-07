@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <p>添加书籍</p>
+    <form action="">
+         名称：<input type="text" name="name" /><br />
+        作者：<input type="text" name="author" /><br />
+        分类：<input type="text" name="category" /><br />
+        描述：<input type="text" name="desc" /><br />
+        <input type="button" id="add" value="添加" />
+    </form>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#add").on("click",function(){
+                var obj = {
+                    name:$("input[name='name']").val(),
+                    author:$("input[name='author']").val(),
+                    category:$("input[name='category']").val(),
+                    desc:$("input[name='desc']").val(),
+
+                }
+                // var obj  = $("form").serialize();
+                console.log(obj);
+                for(var k in obj){
+                    if(!obj[k]) return; 
+                }
+
+                $.ajax({
+                    type:"post",
+                    url:"http://nodejsvue.duapp.com/book/add",
+                    data:obj,
+                    success:function(data){
+                        console.log(data)
+                         window.location.href = "./index.html";
+                    }
+                })
+            })
+        })
+
+    </script>
+</body>
+</html>

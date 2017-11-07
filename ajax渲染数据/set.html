@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <p>编辑数据</p>
+    <div>
+       <script type="text/html" id="set">
+            <input type="hidden" value="{{_id}}" name="id"/>
+        名称：<input type="text" name="name" value="{{name}}" /><br />
+        作者：<input type="text" name="author" value="{{author}}"/><br />
+        分类：<input type="text" name="category" value="{{category}}"/><br />
+        描述：<input type="text" name="desc" value="{{desc}}"/><br />
+       </script>
+    </div>
+    <input type="button" id="btn" value="编辑" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            function getQueryString(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return unescape(r[2]);
+                }
+            
+                return null;
+            }
+            var id = getQueryString("id")
+            console.log(id);
+            $.ajax({
+                type:"get",
+                url:"http://nodejsvue.duapp.com/book/"+id,
+                success:function(data){
+                    console.log(data)
+                    var set_con = template("set",data);
+                    $("div").html(set_con)
+                }
+            })
+            $("#btn").on("click",function(){
+                console.log(1)
+                 var obj = {
+                    id:$("input[type='hidden']").val(),
+                    name:$("input[name='name']").val(),
+                    author:$("input[name='author']").val(),
+                    category:$("input[name='category']").val(),
+                    desc:$("input[name='desc']").val(),
+
+                }
+                $.ajax({
+                    type:"get",
+                    url:"http://nodejsvue.duapp.com/book/update",
+                    data:obj,
+                    success:function(data){
+                        console.log(data)
+                        if(data.success=="1"){
+                            window.location.href = "./index.html";
+                        }
+                    }
+                })
+            })
+        })
+
+    </script>
+           
+</body>
+</html>

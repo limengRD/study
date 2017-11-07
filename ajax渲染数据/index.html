@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        h3{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background: lightblue;
+            text-align: center;
+        }
+        table{
+            width:100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        td,th{
+            border:1px solid red;
+            text-align: center;
+            line-height: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <h3>图书管理系统<a href="add.html">添加图书</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>作者</th>           
+                <th>分类</th>    
+                <th>描述</th>     
+                <th>编辑</th>     
+                <th>删除</th>
+        </tr>
+        </thead>
+        <tbody>
+            <script type="text/html" id="list">
+                {{each list as value}}
+                    <tr>
+                        <td>{{value._id}}</td>
+                        <td>{{value.name}}</td>
+                        <td>{{value.author}}</td>           
+                        <td>{{value.category}}</td>    
+                        <td>{{value.desc}}</td>     
+                        <td><a href="set.html?id={{value._id}}" class="set">编辑</a></td>     
+                        <td><a href="javascript:;"  class="del" data-id="{{value._id}}">删除</a></td>
+                     </tr>
+                {{/each}}
+            </script>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript">
+   $(function(){
+         $.ajax({
+            type:"get",
+            url:"http://nodejsvue.duapp.com/book/list",
+            success:function(data){
+                console.log(data)
+                var list_con = template("list",{list:data});
+                $("tbody").html(list_con); 
+            }
+        });
+         $("table").on("click",".del",function(){
+            console.log($(this).data('id'))
+            var id = $(this).data("id");
+            var  _this = $(this);
+            $.ajax({
+                type:"get",
+                url:"http://nodejsvue.duapp.com/book/delete/"+id,
+                success:function(data){
+                    console.log(data)
+                    if(data.ok=="1"){
+                        _this.parents("tr").remove();
+                    }
+                }
+
+            })
+         })
+        
+
+   })
+
+
+
+</script>
+    
+</body>
+</html>
