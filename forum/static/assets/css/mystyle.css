@@ -1,0 +1,25 @@
+body {
+    background: #ccc;
+}
+#login {
+    width: 300px;
+    margin: 300px auto;
+}
+#login-btn {
+    text-align: center;
+    width: 100%;
+}
+
+#login .form-group{
+    width: 300px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#login img {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 10px solid #fff;
+}
