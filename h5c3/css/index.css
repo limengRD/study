@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0 ;
+}
+.go {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    z-index: 20;
+}
+.more {
+    position: absolute;
+    right: 40px;
+    bottom: 80px;
+    z-index: 20;
+    animation: more 0.3s linear infinite alternate;
+}
+.content {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.1);
+}
+
+.screen01 {
+    background: url("../images/01-bg.png") no-repeat center bottom;
+}
+
+.screen01 .goods {
+    position: absolute;
+    top: 220px;
+    left: 30px;
+}
+
+.screen01 .fly {
+    position: absolute;
+    top: 0;
+    right: -80px;
+    animation: fly 1s linear infinite alternate;
+}
+
+.screen01 .sofa {
+    position: absolute;
+    left: 150px;
+    top: 100px;
+    animation: sofa 0.7s linear infinite alternate;
+}
+
+@keyframes fly {
+    from{
+        transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(30px);
+    }
+}
+
+@keyframes sofa {
+    from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(20px);
+    }
+}
+
+@keyframes more {
+    from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(20px);
+    }
+}
+
+
+/* 第二页 */
+
+.screen02 {
+    background: url("../images/02-bg.png") no-repeat center bottom;
+}
+
+.screen02 .goods {
+    position: absolute;
+    left: 220px;;
+    top: 170px;
+    opacity: 0;
+}
+
+.screen02 .sofa {
+    transform: scale(0.5);
+    position: absolute;
+    left: 280px;
+    top: 134px;
+    opacity: 0;
+}
+
+.screen02 .input {
+    position: absolute;
+    transform-origin: right top;
+    transform: translate(504px,124px) scale(0.7);
+    opacity: 0;
+}
+.screen02 .key {
+    position: absolute;
+    left: 100px;
+    top: 5px;
+}
+
+.screen02.now .input {
+    animation: input02 3s linear ;
+}
+@keyframes input02 {
+    0%{
+        opacity: 1;
+        transform: translate(2000px,130px);
+    }
+    33.3%{
+        transform: translate(-180px,130px);
+    }
+    67%{
+        transform: translate(-180px,130px);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(0.7);
+    }
+} mc7k8098
