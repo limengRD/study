@@ -28,8 +28,8 @@ function xiu_get_current_user () {
  * 通过一个数据库查询获取多条数据
  * => 索引数组套关联数组
  */
-function xiu_fetch_all ($sql) {
-  $conn = mysqli_connect(XIU_DB_HOST, XIU_DB_USER, XIU_DB_PASS, XIU_DB_NAME);
+function forum_fetch_all ($sql) {
+  $conn = mysqli_connect(FORUM_DB_HOST, FORUM_DB_USER, FORUM_DB_PASS, FORUM_DB_NAME);
   if (!$conn) {
     exit('连接失败');
   }
@@ -56,7 +56,7 @@ function xiu_fetch_all ($sql) {
  * 获取单条数据
  * => 关联数组
  */
-function xiu_fetch_one ($sql) {
+function forum_fetch_one ($sql) {
   $res = xiu_fetch_all($sql);
   return isset($res[0]) ? $res[0] : null;
 }
@@ -64,7 +64,7 @@ function xiu_fetch_one ($sql) {
 /**
  * 执行一个增删改语句
  */
-function xiu_execute ($sql) {
+function forum_execute ($sql) {
   $conn = mysqli_connect(XIU_DB_HOST, XIU_DB_USER, XIU_DB_PASS, XIU_DB_NAME);
   if (!$conn) {
     exit('连接失败');

@@ -7,19 +7,19 @@
 /**
  * 数据库主机
  */
-define('XIU_DB_HOST', 'localhost');
+define('FORUM_DB_HOST', 'localhost');
 /**
  * 数据库用户名
  */
-define('XIU_DB_USER', 'root');
+define('FORUM_DB_USER', 'root');
 /**
  * 数据库密码
  */
-define('XIU_DB_PASS', '123456');
+define('FORUM_DB_PASS', '123456');
 /**
  * 数据库名字
  */
-define('XIU_DB_NAME', 'forum');
+define('FORUM_DB_NAME', 'forum');
 
 // D:\www\baixiu-dev\config.php
 // D:\www\baixiu-dev

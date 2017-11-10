@@ -1,25 +1,73 @@
 body {
     background: #ccc;
 }
-#login {
-    width: 300px;
+
+#box {
+    width: 380px;
     margin: 300px auto;
+    padding: 40px 40px 60px 40px;
+    background-color: #fff;
+    position: relative;
 }
-#login-btn {
+/* 切换登录注册按钮 */
+
+.change {
+   text-align: center; 
+   margin-bottom: 40px;
+   border-bottom: 1px solid #ccc;
+   position: relative;
+}
+.change .move {
+    width: 40px;
+    height: 3px;
+    position: absolute;
+    left: 84px;
+    bottom: -2px;
+    background: #0f88bb;
+}
+.change a{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0px 30px;
+}
+.change-register-btn {
+    color: #0f88bb;
+}
+
+/* 注册表单 */
+
+#register p{
+    padding: 0px 0px 30px 0px;
+    font-size: 20px;
+    color: cornflowerblue;
+}
+
+/* 登录表单 */
+
+#login {
+    display: none;
+}
+.login-btn {
+    width: 300px;
     text-align: center;
     width: 100%;
 }
 
-#login .form-group{
+.login .form-group{
     width: 300px;
     margin-left: 0;
     margin-right: 0;
 }
 
-#login img {
+.login img {
     display: block;
     width: 100px;
     margin: 0 auto;
     border-radius: 50%;
-    border: 10px solid #fff;
+    border: 5px solid #cdcdcd;
+    margin-bottom: 10px;
+    position: absolute;
+    top: -50px;;
+    left: 50%;
+    margin-left: -50px;
 }
