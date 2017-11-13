@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 560px;
+            height: 300px;
+            margin: 100px auto 0;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .box .imageBox {
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            /* transform-style: preserve-3d; */
+            /* transform: rotateX(60deg) rotateY(-30deg); */
+        }
+        .box .imageBox li{
+            width: 112px;
+            height: 300px;
+            position: relative;
+            float:left;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+        .box .imageBox li span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .box .imageBox li span:nth-child(1) {
+            background: url('images/1.jpg');
+            transform: translateZ(150px);
+        }
+        .box .imageBox li span:nth-child(2) {
+            background: url('images/2.jpg');
+            transform: translateY(-150px) rotateX(90deg);
+        }
+        .box .imageBox li span:nth-child(3) {
+            background: url('images/3.jpg');
+            transform: translateZ(-150px) rotateX(180deg);
+        }
+        .box .imageBox li span:nth-child(4) {
+            background: url('images/4.jpg');
+            transform: translateY(150px) rotateX(-90deg);
+        }
+
+        .box .imageBox li:nth-child(1) span {
+            background-position: 0 0;
+        }
+        .box .imageBox li:nth-child(2) span {
+            background-position: -112px 0;
+        }
+        .box .imageBox li:nth-child(3) span {
+            background-position: -224px 0;
+        }
+        .box .imageBox li:nth-child(4) span {
+            background-position: -336px 0;
+        }
+        .box .imageBox li:nth-child(5) span {
+            background-position: -448px 0;
+        }
+
+        .box > a{
+            display: inline-block;
+            width: 30px;
+            height: 50px;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            background: rgba(0, 0, 0, .4);
+            position: absolute;
+            color: #fff;
+        }
+
+        .left {
+            left: 0;
+            top: 125px;
+        }
+        .right {
+            right: 0;
+            top: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="imageBox">
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+        </ul>
+        <a href="javascript:;" class="left">&lt;</a>
+        <a href="javascript:;" class="right">&gt;</a>
+    </div>
+</body>
+<script src="jquery.min.js"></script>
+<script>
+
+    $(function () {
+        var index = 0;
+        var onOff = true;
+        $('.left').on('click',function (){
+            // console.log(123)
+            if(!onOff) return
+            onOff = false
+            index++
+            var angle = index * 90
+            $('li').css('transform','rotateX('+ angle + 'deg)').each(function (i,item) {
+                $(this).css('transition-delay',i*0.25 + 's')
+            })
+        })
+        $('.right').on('click',function () {
+            if(!onOff) return
+            onOff = false
+            index--
+            var angle = index * 90
+            $('li').css('transform','rotateX('+ angle + 'deg)').each(function (i,item) {
+                $(this).css('transition-delay',i*0.25 + 's')
+            })
+        })
+        $('li:last').on('transitionend',function(){
+            onOff = true;
+        })
+    })
+
+</script>
+
+</script>
+</html>
