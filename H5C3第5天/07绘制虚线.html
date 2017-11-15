@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+
+        ctx.moveTo(100,100.5)
+        ctx.lineTo(300,100.5)
+        // 运用数组的形式 表示虚线的长度和空格的长度
+        ctx.setLineDash([5,5])
+        //如果是正值 往后便宜
+        //如果是负值 往前偏移
+        ctx.lineDashOffset = -20
+        ctx.stroke()
+    </script>
+</body>
+</html>

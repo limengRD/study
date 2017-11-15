@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas')
+        var ctx = myCanvas.getContext('2d')
+        
+        ctx.beginPath()
+        ctx.moveTo(100,100)
+        ctx.lineTo(200,20)
+        ctx.lineTo(300,100)
+        ctx.strokeStyle = 'blue'
+        ctx.lineWidth = 10
+        // 两头  butt 默认
+        ctx.lineCap = 'butt'
+        // 拐角 miter 默认
+        ctx.lineJoin = 'miter'
+        ctx.stroke()
+
+
+        ctx.beginPath()
+        ctx.moveTo(100,200)
+        ctx.lineTo(200,120)
+        ctx.lineTo(300,200)
+        ctx.strokeStyle = 'red'
+        ctx.lineWidth = 20
+        // 两头  square 加长
+        ctx.lineCap = 'square'
+        // 拐角 bevel 肖平
+        ctx.lineJoin = 'bevel'
+        ctx.stroke()
+        
+
+        ctx.beginPath()
+        ctx.moveTo(100,300)
+        ctx.lineTo(200,220)
+        ctx.lineTo(300,300)
+        ctx.strokeStyle = 'green'
+        ctx.lineWidth = 30
+        // 两头  round  圆角 
+        ctx.lineCap = 'round'
+        // 拐角 round 圆角
+        ctx.lineJoin = 'round'
+        ctx.stroke()
+    </script>
+</body>
+</html>
