@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="400"></canvas>
+<script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+    var w = ctx.canvas.width;
+    var h = ctx.canvas.height;
+
+    ctx.moveTo(w/2,h/2)
+    ctx.arc(w/2,h/2,150,0,-Math.PI/2,true)
+    ctx.closePath()
+    //不写闭合  填充会默认闭合填充
+    ctx.fill()
+</script>
+</body>
+</html>
