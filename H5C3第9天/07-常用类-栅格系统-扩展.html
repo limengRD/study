@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+       .container > .row > div {
+            height: 40px;
+            background: red;
+            border: 1px solid #000;
+        }
+        .container > .row > div > div > div {
+            height: 20px;
+            background: green;
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-3 col-sm-offset-1"></div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2 col-sm-push-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
