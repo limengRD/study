@@ -1,0 +1,90 @@
+<!-- 使用的html5的申明 -->
+<!DOCTYPE html>
+<!-- 使用的是中文简体语言 en zh-tw -->
+<html lang="zh-CN">
+<head>
+    <!-- 使用的是 utf-8  -->
+    <meta charset="utf-8">
+    <!-- 如果使用的是IE浏览器 那么选择最高版本的内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 视口宽度和设备一致  视口的缩放比和PC一致  用户不能自行缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- 优先解释这三个标签-->
+
+    <title>基本模板</title>
+    <!--引入bootstrap核心样式-->
+    <!-- Bootstrap -->
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!--
+        html5标签IE8不支持 html5shiv
+        媒体查询IE8不支持  Respond
+    -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- 注意：预览页面必须在http形式打开，不能file://打开 -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--条件注释-->
+    <!--[if lt IE 9]>
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- carousel 样式模块前缀  slide 控制滑动动画 -->
+<!-- data-ride="carousel" 初始化的js组件 轮播图组件-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- 指示器 点容器 -->
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <!-- data-target="#carousel-example-generic" 指定控制哪个轮播图 -->
+        <!-- data-slide-to="0" 控制轮播图当中的哪个轮播的容器 -->
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+    <!--
+        图片高宽都自适应
+    -->
+    <style>
+        .imgBox_m{
+            display: block;
+            width: 100%;
+        }
+        .imgBox_m img{
+            display: block;
+            width: 100%;
+        }
+    </style>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <a class="imgBox_m" href="#"><img src="../weijinsuo/images/slide_01_640x340.jpg" alt=""></a>
+        </div>
+        <div class="item">
+            <a class="imgBox_m" href="#"><img src="../weijinsuo/images/slide_02_640x340.jpg" alt=""></a>
+        </div>
+        <div class="item">
+            <a class="imgBox_m" href="#"><img src="../weijinsuo/images/slide_03_640x340.jpg" alt=""></a>
+        </div>
+        <div class="item">
+            <a class="imgBox_m" href="#"><img src="../weijinsuo/images/slide_04_640x340.jpg" alt=""></a>
+        </div>
+    </div>
+
+    <!-- Controls 上一张 下一张 -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" ></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+<!-- bootstrap 是基于jquery  -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="lib/jquery/jquery.min.js"></script>
+<!-- bootstrap 核心js文件 js插件-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
