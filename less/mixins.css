@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*mixin 混入*/
+/*1.参数的定义*/
+/*2.参数的定义和变量一样*/
+/*3.如果定义的参数那就必须传*/
+/*4.但是有一个情况是不需要传递的*/
+/*5.可以设置默认值*/
+.box {
+  width: 50%;
+  float: right;
+  border-left: 1px solid #ccc;
+  transition: all 2s;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -o-transition: all 2s;
+  -ms-transition: all 2s;
+}

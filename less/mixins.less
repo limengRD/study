@@ -1,0 +1,74 @@
+@charset "utf-8";
+/*mixin 混入*/
+//1.样式的混入
+//.w{
+//  width: 50%;
+//}
+//.fl{
+//  float: left;
+//}
+//.fr{
+//  float: right;
+//}
+//.br{
+//  border-right: 1px solid #ccc;
+//}
+//.bl{
+//  border-left: 1px solid #ccc;
+//}
+//.bb{
+//  border-bottom: 1px solid #ccc;
+//}
+//宽度50%右浮动左边框
+//.box{
+//  .w();
+//  .fr();
+//  .bl();
+//}
+//2.函数的混入
+.w(){
+  width: 50%;
+}
+//.fl(){
+//  float: left;
+//}
+//.fr(){
+//  float: right;
+//}
+
+/*1.参数的定义*/
+/*2.参数的定义和变量一样*/
+/*3.如果定义的参数那就必须传*/
+/*4.但是有一个情况是不需要传递的*/
+/*5.可以设置默认值*/
+.float(@direction:left){
+  float: @direction;
+}
+//.br(){
+//  border-right: 1px solid #ccc;
+//}
+//.bl(){
+//  border-left: 1px solid #ccc;
+//}
+//.bb(){
+//  border-bottom: 1px solid #ccc;
+//}
+.border(@direction:right){
+  border-@{direction}: 1px solid #ccc;
+}
+
+.transition(@duration:1s){
+  transition: all @duration;
+  -webkit-transition: all @duration;
+  -moz-transition: all @duration;
+  -o-transition: all @duration;
+  -ms-transition: all @duration;
+}
+
+//宽度50%右浮动左边框过渡2s
+.box{
+  .w();
+  .float(right);
+  .border(left);
+  .transition(2s);
+}

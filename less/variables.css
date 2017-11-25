@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*这种注释会编译到css文件当中*/
+/*申明变量*/
+/*使用变量*/
+a:hover {
+  color: #e92333;
+}
+.box {
+  width: 100%;
+  background: #e92333;
+}
+.wjs_banner {
+  border: 1px solid #ccc;
+}
+.wjs_nav {
+  border: 1px solid #ccc;
+}

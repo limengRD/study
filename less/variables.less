@@ -1,0 +1,27 @@
+@charset "utf-8";
+/*这种注释会编译到css文件当中*/
+//这种注释是less特有 不会编译到css文件
+
+/*申明变量*/
+//1.@必须前缀
+//2.不能包含特殊字符
+//3.不能以数字开头
+//4.大小写敏感
+@mainColor:#e92333;
+@width:100%;
+@className:wjs_;
+/*使用变量*/
+a:hover{
+  color: @mainColor;
+}
+.box{
+  width: @width;
+  background: @mainColor;
+}
+//拼接变量
+.@{className}banner{
+  border: 1px solid #ccc;
+}
+.@{className}nav{
+  border: 1px solid #ccc;
+}

@@ -1,0 +1,83 @@
+@charset "utf-8";
+/*这种注释会编译到css文件当中*/
+/*申明变量*/
+/*使用变量*/
+a:hover {
+  color: #e92333;
+}
+.box {
+  width: 100%;
+  background: #e92333;
+}
+.wjs_banner {
+  border: 1px solid #ccc;
+}
+.wjs_nav {
+  border: 1px solid #ccc;
+}
+/*mixin 混入*/
+/*1.参数的定义*/
+/*2.参数的定义和变量一样*/
+/*3.如果定义的参数那就必须传*/
+/*4.但是有一个情况是不需要传递的*/
+/*5.可以设置默认值*/
+.box {
+  width: 50%;
+  float: right;
+  border-left: 1px solid #ccc;
+  transition: all 2s;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -o-transition: all 2s;
+  -ms-transition: all 2s;
+}
+.wjs_topBar {
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+}
+.wjs_topBar > .container > .row > div {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.wjs_topBar > .container > .row > div ~ div {
+  border-left: 1px solid #ccc;
+}
+.wjs_topBar .btn-register {
+  background: #e92322;
+  font-size: 12px;
+  padding: 3px 12px;
+  border-color: #e92322;
+}
+.wjs_topBar .btn-login {
+  font-size: 12px;
+  color: #333;
+}
+.wjs_topBar .btn-login:hover {
+  text-decoration: none;
+  color: #333;
+}
+.wjs_topBar .btn-login::before {
+  content: "";
+}
+.box1 {
+  transition: all 10s;
+  -webkit-transition: all 10s;
+  -moz-transition: all 10s;
+  -o-transition: all 10s;
+  -ms-transition: all 10s;
+}
+/*5.运算 内置函数*/
+.box2 {
+  color: #75121a;
+  width: 12.5px;
+  height: 400px;
+  background: #ff3333;
+  border-color: #cc0000;
+}
+ul {
+  width: 1000%;
+}
+ul li {
+  width: 10%;
+}

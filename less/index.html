@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/less" href="index.less">
+    <script src="less.min.js"></script>
+    <script>
+        less.watch();
+    </script>
+</head>
+<body>
+    <!--1.在浏览器端直接使用less文件预览 type="text/less" -->
+    <!--2.浏览器无法直接使用less类型的文件，无法解析-->
+    <!--3.转换成css,需要js插件支持-->
+    <!--4.下载插件 https://github.com/less/less.js/tree/master/dist -->
+    <!--5.less.js会异步加载less文件的内容，再去解析成css,然后追加到style-->
+    <!--6.必须使用HTTP形式打开页面，不要以file形式打开-->
+    <!--7.更改完成之后每次要刷新，可以配置less监听，自动刷新页面预览-->
+    <!--8.需要js配置 less.watch() -->
+    <div class="box2">test</div>
+</body>
+</html>

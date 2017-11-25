@@ -1,0 +1,30 @@
+@charset "utf-8";
+.wjs_topBar {
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+}
+.wjs_topBar > .container > .row > div {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.wjs_topBar > .container > .row > div ~ div {
+  border-left: 1px solid #ccc;
+}
+.wjs_topBar .btn-register {
+  background: #e92322;
+  font-size: 12px;
+  padding: 3px 12px;
+  border-color: #e92322;
+}
+.wjs_topBar .btn-login {
+  font-size: 12px;
+  color: #333;
+}
+.wjs_topBar .btn-login:hover {
+  text-decoration: none;
+  color: #333;
+}
+.wjs_topBar .btn-login::before {
+  content: "";
+}

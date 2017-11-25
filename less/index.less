@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@import "variables";
+
+@import "mixins";
+
+@import "topBar";
+
+@import "wjsNav";
+
+
+/*5.运算 内置函数*/
+@num:10;
+.box2{
+  color: @mainColor/2;
+  width: 100px/8;
+  height: 400px;
+  background: lighten(red,10%);
+  border-color: darken(red,10%);
+}
+ul{
+  width: 100%*@num;
+}
+ul li{
+  width: 100%/@num;
+}
