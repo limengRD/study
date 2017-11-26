@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import "variables";
+.sn_banner {
+    overflow: hidden;
+    padding-top: 90rem/@baseFontSize;
+    position: relative;
+    ul {
+        &:first-child {
+            transform: translateX(-10%);
+            width: 10*100%;
+            
+            li {
+                width: 10%;
+                float: left;
+                a {
+                    display: block;
+                    width: 100%;
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &:last-child {
+            width: 24rem*8/@baseFontSize;
+            position: absolute;
+            bottom: 20rem/@baseFontSize;
+            right: 20rem/@baseFontSize;
+            li {
+                width: 12rem/@baseFontSize;
+                height: 12rem/@baseFontSize;
+                margin-right: 12rem/@baseFontSize;
+                float: left;
+                background: #fff;
+                border-radius: 50%;
+                &.now {
+                    background: yellow;
+                }
+            }
+        }
+    }
+}

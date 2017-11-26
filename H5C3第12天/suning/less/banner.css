@@ -1,0 +1,40 @@
+@charset "utf-8";
+/*定义项目的所有变量*/
+.sn_banner {
+  overflow: hidden;
+  padding-top: 0.9rem;
+  position: relative;
+}
+.sn_banner ul:first-child {
+  transform: translateX(-10%);
+  width: 1000%;
+}
+.sn_banner ul:first-child li {
+  width: 10%;
+  float: left;
+}
+.sn_banner ul:first-child li a {
+  display: block;
+  width: 100%;
+}
+.sn_banner ul:first-child li a img {
+  display: block;
+  width: 100%;
+}
+.sn_banner ul:last-child {
+  width: 1.92rem;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.2rem;
+}
+.sn_banner ul:last-child li {
+  width: 0.12rem;
+  height: 0.12rem;
+  margin-right: 0.12rem;
+  float: left;
+  background: #fff;
+  border-radius: 50%;
+}
+.sn_banner ul:last-child li.now {
+  background: yellow;
+}

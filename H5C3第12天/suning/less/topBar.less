@@ -1,0 +1,50 @@
+@charset "utf-8";
+@import "variables";
+.sn_topBar{
+  width: 100%;
+  height: 90rem/@baseFontSize;
+  background: @snColor;
+  position: fixed;
+  left: 0;
+  top: 0;
+  line-height: 90rem/@baseFontSize;
+  .sn_topBar_left {
+    display: block;
+    width: 90rem/@baseFontSize;
+    height: 90rem/@baseFontSize;
+    background: url(../images/icon_category.png) no-repeat center / 44rem/@baseFontSize 70rem/@baseFontSize;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .sn_topBar_right {
+    display: block;
+    width: 90rem/@baseFontSize;
+    height: 90rem/@baseFontSize;
+    background: url(../images/icon_cart.png) no-repeat center / 63rem/@baseFontSize 68rem/@baseFontSize;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .sn_topBar_search {
+    width: 100%;
+    padding-left: 90rem/@baseFontSize;
+    padding-right: 90rem/@baseFontSize;
+    position: relative;
+    span {
+      position: absolute;
+      left: 100rem/@baseFontSize;
+      top: 30rem/@baseFontSize;
+      width: 30rem/@baseFontSize;
+      height: 30rem/@baseFontSize;
+      background: url(../images/icon_search.png) no-repeat center / 24rem/@baseFontSize 25rem/@baseFontSize;
+    }
+    input {
+      height: 60rem/@baseFontSize;
+      width: 100%;
+      font-size: 30rem/@baseFontSize;
+      border-radius: 6px;
+      padding-left: 50rem/@baseFontSize;
+    }
+  }
+}

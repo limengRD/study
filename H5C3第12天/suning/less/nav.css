@@ -1,0 +1,19 @@
+@charset "utf-8";
+/*定义项目的所有变量*/
+.sn_nav {
+  padding: 10px 0;
+}
+.sn_nav ul li {
+  float: left;
+  width: 20%;
+}
+.sn_nav ul li a img {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0 auto;
+}
+.sn_nav ul li a p {
+  text-align: center;
+  font-size: 0.2rem;
+}

@@ -1,0 +1,50 @@
+@charset "utf-8";
+/*定义项目的所有变量*/
+.sn_topBar {
+  width: 100%;
+  height: 0.9rem;
+  background: #fa0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  line-height: 0.9rem;
+}
+.sn_topBar .sn_topBar_left {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: url(../images/icon_category.png) no-repeat center / 0.44rem 0.7rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sn_topBar .sn_topBar_right {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: url(../images/icon_cart.png) no-repeat center / 0.63rem 0.68rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.sn_topBar .sn_topBar_search {
+  width: 100%;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  position: relative;
+}
+.sn_topBar .sn_topBar_search span {
+  position: absolute;
+  left: 1rem;
+  top: 0.3rem;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: url(../images/icon_search.png) no-repeat center / 0.24rem 0.25rem;
+}
+.sn_topBar .sn_topBar_search input {
+  height: 0.6rem;
+  width: 100%;
+  font-size: 0.3rem;
+  border-radius: 6px;
+  padding-left: 0.5rem;
+}
