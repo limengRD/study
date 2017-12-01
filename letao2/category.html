@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <script src="mui/js/mui.min.js"></script>
+    <script src="assets/zepto/dist/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+</head>
+<body>
+    <div class="lt_main">
+        <header class="lt_header">
+            <h3>乐淘网</h3>
+            <a href="search.html"><span class="fa fa-search"></span></a>
+        </header>
+        <div class="lt_container mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="lt_product_first">
+                    <ul>
+                        <script type="text/html" id="queryTopCategory">
+                            <% for(var i = 0; i < rows.length; i++){ %>
+                            <li><a href="javascript:;" data-id="<%=rows[i].id%>" class="<%=i==0?'now' : ''%>"><%=rows[i].categoryName%></a></li>
+                            <% } %>
+                        </script>
+                        
+                    </ul>
+                </div>
+                <div class="lt_product_seconed">
+                    <ul>
+                        <script type="text/html" id="secondTemplate">
+                            <% if(rows.length){ %>
+                                <% for (var i = 0; i < rows.length; i++) {%>
+                                <li><a href=""><img src="<%=rows[i].brandLogo%>" alt=""><p><%=rows[i].brandName %></p></a></li>
+                                <% } %>
+                            <% }else {%>
+                                <li class="nd">该分类下暂无数据。</li>
+                            <% } %>
+                        </script>
+                        
+                    </ul>
+                </div>            
+            </div>
+        </div>
+        <footer class="lt_footer">
+            <ul>
+                <li><a href=""><span class="fa "></span><p>首页</p></li>
+                <li><a href="category.html"><span class="fa "></span><p>分类</p></li>
+                <li><a href=""><span class="fa "></span><p>购物车</p></li>
+                <li><a href=""><span class="fa "></span><p>会员中心</p></li>                    
+            </ul>
+        </footer>
+    </div>
+</body>
+<script src="js/category.js"></script>
+</html>

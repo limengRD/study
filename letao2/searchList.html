@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/searchList.css">
+    <link rel="stylesheet" href="mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <script src="mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+</head>
+
+<body>
+    <div class="lt_main">
+        <header class="lt_header">
+            <h3>乐淘网</h3>
+            <span class="fa fa-search"></span>
+        </header>
+        <div class="lt_body">
+            <div class="lt_content">
+               <div class="mui-scroll-wrapper" id="refreshContainer">
+                   <div class="mui-scroll">
+                       <!--搜索框-->
+                       <div class="lt_search">
+                           <form action="">
+                                <input type="search" placeholder="搜索你喜欢的商品" class="search_input">
+                                <a href="javascript:;" class="search_btn">搜索</a>
+                           </form>
+                           
+                       </div>
+                       <!--排序栏-->
+                       <div class="lt_order">
+                           <a href="#" data-type="time">上架时间 <span class="fa fa-angle-down"></span></a>
+                           <a href="#" data-type="price">价格 <span class="fa fa-angle-down"></span></a>
+                           <a href="#" data-type="num">销量 <span class="fa fa-angle-down"></span></a>
+                           <a href="#" data-type="scale">折扣 <span class="fa fa-angle-down"></span></a>
+                       </div>
+                       <!--商品列表-->
+                       <div class="lt_product">
+                           <!--TODO-->
+                           <script type="text/template" id="productListTemplate">
+                                <ul>
+                                    <% for(var i = 0; i < data.length; i++){ %>
+                                    <% var item = data[i]%>
+                                        <li>
+                                            <a href="product.html?productId=<%=item.id%>" data-id="<%=item.id%>">
+                                            <% if(item.pic && item.pic.length > 0) { 
+                                                var picAddr = item.pic[0].picAddr      
+                                            }
+                                            %>
+                                                
+                                            <img src="<%=picAddr%>" alt="">
+                                            <p class="name mui-ellipsis-2"><%=item.proName%></p>
+                                            <p class="price"><span>&yen;<%=item.price%></span> <span>&yen;<%=item.oldPrice%></span></p>
+                                            <button>立即购买</button>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                           </script>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <footer class="lt_footer">
+            <ul>
+                <li><a href=""><span class="fa "></span><p>首页</p></li>
+                <li><a href="category.html"><span class="fa "></span><p>分类</p></li>
+                <li><a href=""><span class="fa "></span><p>购物车</p></li>
+                <li><a href=""><span class="fa "></span><p>会员中心</p></li>                    
+            </ul>
+        </footer>
+    </div>
+</body>
+<script src="js/common.js"></script>
+<script src="js/searchList.js"></script>
+</html>

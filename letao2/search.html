@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <script src="mui/js/mui.min.js"></script>
+    <script src="assets/zepto/dist/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+</head>
+
+<body>
+    <div class="lt_main">
+        <header class="lt_header">
+            <h3>乐淘网</h3>
+            <span class="fa fa-search"></span>
+        </header>
+        <div class="lt_content">
+            <div class="lt_wrapper">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--搜索表单-->
+                        <div class="lt_search">
+                            <form action="javascript:;">
+                                <input class="search_input" type="search" placeholder="请输入搜索关键字" />
+                                <a class="search_btn" href="javascript:;">搜索</a>
+                            </form>
+                        </div>
+                        <!--搜索历史-->
+                        <div class="lt_history">
+                            <script type="text/template" id="localStorage">                
+                                <div class="mui-clearfix">
+                                    <% if(list.length > 0)  { %>
+                                        <span class="mui-pull-left">搜索历史</span>
+                                        <span class="mui-pull-right fa fa-trash clear_history">清空记录</span>
+                                    <% } else { %>
+                                        <span class="mui-pull-left">没有搜索历史记录</span>   
+                                    <% } %>
+                                </div>
+
+                                <% if(list.length > 0) {%>
+                                <ul>
+                                    <% for(var i = list.length-1; i >=0 ; i--){ %>
+                                    <li><a href="searchList.html?key=<%=%>"><%=list[i] %></a><span data-index="<%=i%>" class="mui-icon mui-icon-closeempty"></span></li>
+                                    <% } %>
+                                </ul>
+                                <% } %>
+                                
+                            </script>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="lt_footer">
+            <ul>
+                <li><a href=""><span class="fa "></span><p>首页</p></li>
+                <li><a href="category.html"><span class="fa "></span><p>分类</p></li>
+                <li><a href=""><span class="fa "></span><p>购物车</p></li>
+                <li><a href=""><span class="fa "></span><p>会员中心</p></li>                    
+            </ul>
+        </footer>
+    </div>
+</body>
+<script src="js/search.js"></script>
+</html>
