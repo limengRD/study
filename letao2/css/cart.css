@@ -1,0 +1,67 @@
+.lt_amount{
+    position: fixed;
+    left: 0;
+    bottom:55px;
+    background: #fff;
+    border-top:1px solid #ccc;
+    width: 100%;
+    height: 30px;
+    line-height: 29px;
+}
+.lt_amount .trade{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    background: #ff3300;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+}
+.lt_amount .amount{
+    color: #ff3300;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left:10px;
+}
+.lt_container .lt_body.cart{
+    padding-bottom:85px;
+}
+#cartList .name{
+    color: #333;
+}
+#cartList .price .now{
+    color: #ff3300;
+}
+#cartList .price .old{
+    color: #ccc;
+    text-decoration: line-through;
+}
+#cartList .price .num{
+    float: right;
+    font-size: 12px;
+}
+#cartList .mui-navigate-right:after{
+    right: -5px;
+}
+#cartList.mui-table-view .mui-media-object.mui-pull-left{
+    width: 60px;
+    max-width: 60px;
+    height: 60px;
+}
+#cartList li{
+    padding: 10px;
+}
+#cartList li .mui-slider-handle a{
+    display: block;
+    padding-right:10px;
+    position: relative;
+}
+#cartList li .mui-slider-handle a [type="checkbox"]{
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+}
+.cart_update{
+    text-align: left;
+}
