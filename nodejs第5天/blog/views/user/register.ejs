@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">用户名<input type="text" name="username"></label><br>
+        <label for="">密码<input type="text" name="password"></label><br>
+        <label for="">昵称<input type="text" name="nickname"></label><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('form').on('submit', function (e) {
+            e.preventDefault()
+            $.ajax({
+                type: 'post',
+                url: '/register',
+                data: $('form').serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    if(data.err_code == 0) {
+                        location.href = './login'
+                    }
+                }
+            })
+        })
+    })
+
+</script>
+
+</html>
