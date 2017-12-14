@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="box1" @click="box1">
+            <div class="box2" @click.stop="box2"></div>
+        </div>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+
+        },
+        methods: {
+            box1() {
+                alert("box1")
+            },
+            box2() {
+                alert("box2")
+            }
+        }
+    })
+</script>
+</html>

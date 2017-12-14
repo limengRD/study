@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .weight {
+            font-weight: 700;
+        }
+        .small {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 :style="[style1]">1212</h1>    
+        <h3 :style="{'color':'red'}">dfdf</h3>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            style1: {color: 'red','font-size': "12px"},
+
+        },
+        methods: {
+
+        }
+    })
+</script>
+</html>

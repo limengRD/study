@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .weight {
+            font-weight: 700;
+        }
+        .small {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p :class=['red','italic']>adadf</p>
+
+        <input type="button" value="点击" @click="aaa = true">
+        <p :class="['red', aaa ? 'weight' : '']">asdasdasdasd</p>
+
+        <input type="button" value="点击" @click="bbb = true">
+        <h1 :class="['red',{small:bbb}]">ddddddddddddddddddddddddddddddddddddddd</h1>
+    
+        <h1 :class="{red: true,small: false}">dfdf df dzgfhgfh gs</h1>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            aaa: false,
+            bbb: false
+        },
+        methods: {
+
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{flag | add('-------')}}</p>
+        <p :title="flag"></p>
+    </div>
+</body>
+<script>
+    Vue.filter('add',function (data,str) {
+        return data + str
+    })
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            flag: 'aaaa'
+        },
+        methods: {
+
+        }
+    })
+
+</script>
+
+</html>

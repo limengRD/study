@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <label for="">id<input type="text" v-model="id"></label>
+
+        <label for="">name<input type="text" v-model="name"></label>
+        
+        <input type="button" value="添加" @click="add">
+        <input type="search" placeholder="输入搜索内容..." v-model="search" @change="fn">
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>CTime</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in fn()">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.ctime}}</td>
+                    <td><a href="" @click.prevent="del(item.id)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            id: '',
+            name: '',
+            search: '',
+            list: [
+                { id: 1, name: '奔驰', ctime: new Date() },
+                { id: 2, name: '宝马', ctime: new Date() }
+            ]
+        },
+        methods: {
+            add() {
+                var newObj = {}
+                newObj.id = this.id
+                newObj.name = this.name
+                newObj.ctime = new Date()
+                this.list.push(newObj)
+                this.id = this.name = ''
+            },
+            del(id) {
+
+                // for(var i = 0 ; i < this.list.length; i++) {
+                //     if(this.list[i].id == id) {
+                //         this.list.splice(i,1)
+                //         break;
+                //     }
+                // }
+
+                const index = this.list.findIndex(function (item,i,arr) {
+                    return item.id = id
+                })
+
+                this.list.splice(index,1)
+            },
+            fn() {
+                // let arr = []
+                // for(let i = 0 ; i < this.list.length ; i++) {
+                //     if(this.list[i].name.indexOf(this.search) !== -1) {
+                //         arr.push(this.list[i])
+                //     }
+                // } 
+                //  return arr;
+            
+                return this.list.filter(item => item.name.includes(this.search))
+            }
+          
+        }
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="http://www.baidu.com" v-on:click.prevent="a">跳转到百度</a>
+        <a href="http://www.youku.com" @click.prevent="youku">youku</a>
+        <h3>{{number}}</h3>
+        <input type="button" value="点击" @click="add">
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            number: 3
+        },
+        methods: {
+            a() {
+                alert(123)
+            },
+            youku() {
+                alert(321)
+            },
+            add() {
+                this.number += 3;
+            }
+        }
+    })
+</script>
+</html>
