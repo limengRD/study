@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="change" @click.prevent = "message = 'adadfdad'">
+        <div v-color id="box">{{message}}</div>
+        <p v-aclick>ddddd</p>
+    </div>
+</body>
+<script>
+    Vue.directive('color',{
+        // bind(el) {
+        //     el.style.color = 'red'
+        // },
+        inserted(el){
+            el.style.color = 'red'
+        }
+    })
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            message: 'v-color'
+        },
+        methods: {
+            show() {
+              console.log(12)  
+            }
+           } 
+            ,
+            beforeCreate(){
+                console.log(this.message)
+                this.show()
+            },
+            created(){
+                console.log(this.message)
+                this.show()
+            },
+
+            beforeMount(){
+                const box = document.getElementById('box')
+                console.log(box.innerText)
+            },
+            mounted(){
+                const box = document.getElementById('box')
+                console.log(box.innerText)
+            },
+            
+            beforeUpdate(){
+                console.log(this.message)
+                const box = document.getElementById('box')
+                console.log(box.innerHTML)
+            },
+            updated(){
+                console.log(this.message)
+                const box = document.getElementById('box')
+                console.log(box.innerHTML)
+            }
+        
+    })
+</script>
+</html>

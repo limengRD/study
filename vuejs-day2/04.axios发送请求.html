@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="Get请求" @click="getApi">
+        <input type="button" value="Post请求" @click="postApi">
+        <input type="button" value="JSONP请求" @click="">
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            message: 'v-color'
+        },
+        methods: {
+            async getApi() {
+                const {data} = await axios.get('http://39.106.32.91:3000/api/getlunbo')
+                console.log(data)
+            },
+            async postApi() {
+                const {data} = await axios.get('http://39.106.32.91:3000/api/post',{name:'zs',age:12})
+                console.log(data)
+            }
+        }
+    })
+</script>
+</html>
