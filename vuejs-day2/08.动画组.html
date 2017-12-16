@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./node_modules/vue/dist/vue.min.js"></script>
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      line-height: 30px;
+      border: 1px dashed #ccc;
+      margin: 5px;
+      font-size: 12px;
+      padding-left: 10px;
+      width: 500px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: orange;
+      box-shadow: 0 0 7px gray;
+    }
+
+    .v-enter,
+    .v-leave-to {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+      transition: all 0.5s ease;
+    }
+
+    .v-move { 
+      transition: all 0.5s ease;
+    }
+
+    .v-leave-active { 
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+    <div>
+
+      Id：<input type="text" v-model="id">
+      Name：<input type="text" v-model="name">
+      <input type="button" value="添加" @click="add">
+
+    </div>
+
+    <transition-group tag="ul">
+      <li v-for="(item, i) in list" :key="item.id" @click="remove(i)">{{ item.id }} ------ {{ item.name }}</li>
+    </transition-group>
+
+  </div>
+
+  <script>
+
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        list: [
+          { id: 1, name: '高峻俊' },
+          { id: 2, name: '付哥哥' },
+          { id: 3, name: '玉姐姐' },
+          { id: 4, name: '彬哥哥' }
+        ],
+        id: '',
+        name: ''
+      },
+      methods: {
+        remove(i) {
+          this.list.splice(i, 1)
+        },
+        add(){
+          const p = { id: this.id, name: this.name }
+          this.list.unshift(p)
+          this.id = this.name = ''
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

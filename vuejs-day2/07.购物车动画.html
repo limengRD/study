@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./animate.css">
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <style>
+        #ball {
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="点击" @click="flag = !flag">
+        <transition 
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @after-enter="afterEnter"
+        >
+            <h3 id="ball" v-show="flag" ></h3>
+        </transition>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            flag: false
+        },
+        methods: {
+            beforeEnter(el){
+                el.style.transform = 'translate(0,0)'
+            },
+            enter(el,done){
+                el.offsetLeft
+                el.style.transform = 'translate(200px,400px)'
+                el.style.transition = 'all 1s ease  '
+
+                done()
+            },
+            afterEnter(el){
+                el.style.opacity = 0
+            }
+        }
+    })
+</script>
+</html>

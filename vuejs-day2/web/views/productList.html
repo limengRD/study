@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../node_modules/art-template/lib/template-web.js"></script>
+    <script src="../../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../../node_modules/vue-resource/dist/vue-resource.min.js"></script>
+    <style>
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+            transform: translateY(200px)
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: all 1s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">name</label>
+                    <input type="text" class="form-control"  id="exampleInputEmail1" v-model="name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">price</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" v-model="price">
+                </div>
+                <button type="button" class="btn btn-default" @click="addProduct">添加</button>
+            </form>
+
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <td>id</td>
+                        <td>name</td>
+                        <td>price</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <transition-group tag='tbody'>
+                    <tr v-for="item in list" >          
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td><a href="javascript:;" @click="delProduct(item.id)">删除</a></td>    
+                     </tr>
+                </transition-group>
+            </table>
+        </div>
+    </div>
+<script src="js/productList.js"></script>
+</body>
+</html>
