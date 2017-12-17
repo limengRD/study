@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mycom3></mycom3>
+    </div>
+
+    <template id="com3">
+        <div>
+            <h3>这是创建的第三个组件</h3>
+        </div>
+    </template>
+</body>
+<script>
+
+
+
+    Vue.component('mycom3',{
+        template: '#com3'
+    })
+
+    const vm = new Vue({
+        el: "#app",
+        data: {},
+        methods: {}
+    })
+</script>
+</html>

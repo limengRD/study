@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="获取" @click="fn">
+        <com ref="com"></com>
+    </div>
+    <script>
+        Vue.component('com',{
+            template: `<div> {{msg}} </div>`,
+            data() {
+                return {
+                    msg: '123'
+                }
+            }
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                fn() {
+                    console.log(this.$refs.com.msg)
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

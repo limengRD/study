@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="com1" @click="flag='com1'">
+        <input type="button" value="com2" @click="flag='com2'">
+        <input type="button" value="com3" @click="flag='com3'">
+
+        <component :is="flag"></component>
+    </div>
+
+</body>
+<script>
+
+
+
+    Vue.component('com1',{
+        template: '<div>com1</div>'
+    })
+    Vue.component('com2',{
+        template: '<div>com2</div>'
+    })
+    Vue.component('com3',{
+        template: '<div>com3</div>'
+    })
+
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            flag: 'com1'
+        },
+        methods: {
+
+        }
+    })
+</script>
+</html>

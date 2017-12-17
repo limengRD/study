@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>多个组件的切换该如何？</title>
+  <script src="./lib/vue-2.5.9.js"></script>
+  <style>
+   
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- transition     transition-group    template     component -->
+  
+   <a href="#" @click="comname='com1'">组件1</a>
+   <a href="#" @click="comname='com2'">组件2</a>
+   <a href="#" @click="comname='com3'">组件3</a>
+   <a href="#" @click="comname='com4'">组件4</a>
+  <!-- 最主要 -->
+     <!-- 通过 component  的  :is 属性，可以显示指定【名称】的组件 -->
+     <!-- 防止被认为为自定义属性 -->
+     <component :is='comname'></component>  
+  </div>
+  <script>
+  //注册组件
+  Vue.component('com1',{
+    template:'<h1>one</h1>'
+  })
+  Vue.component('com2',{
+    template:'<h1>two</h1>'
+  })
+  Vue.component('com3',{
+    template:'<h1>three</h1>'
+  })
+  Vue.component('com4',{
+    template:'<h1>four</h1>'
+  })
+  
+
+    // 创建 Vue 实例，得到 ViewModel
+    var vm = new Vue({
+      el: '#app',
+      data: {
+       comname:'com1'
+      },
+      methods: {}
+    });
+  </script>
+</body>
+
+</html>

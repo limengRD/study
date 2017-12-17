@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+<body>
+<div id="app">
+
+    <myform @formfn="formfn"></myform>
+    <list v-for="(item,i) in list" :key="i" :aaa="item" @></list>
+</div>
+<script>
+
+    Vue.component('list',{
+        template: `<div>
+            <h3>{{aaa.name}}</h3>
+            <h5>{{aaa.content}}</h5>
+        </div>`,
+        props: ['aaa']
+    })
+
+    Vue.component('myform',{
+        template: `
+        <div>
+            <input type="text" v-model="name"/>
+            <input type="text" v-model="content"/>
+            <input type="button" value="评论" @click="fn">
+        </div>
+        `,
+        data() {
+            return {
+                name:'',
+                content: ''
+            }
+        },
+        props: ['aaa'],
+        methods: {
+            fn() {
+                console.log(123)
+                this.$emit('formfn',{name:this.name,content:this.content})
+            }
+        }
+    })
+
+
+    const vm = new Vue({
+        el: '#app',
+        data: { 
+            list: [
+                { name: 'zs', content: '沙发' },
+                { name: 'ls', content: '板凳' },
+                { name: 'qqq', content: '凉席' },
+                { name: 'eee', content: '砖头' }
+            ]
+        },
+        methods: {
+            formfn(data) {
+                console.log(data)
+                this.list.push(data)
+            }
+        }
+    })
+</script>    
+</body>
+</html>

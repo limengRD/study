@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div ref="msg" @click="fn">{{msg}}</div>
+    </div>
+</body>
+<script>
+
+
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            msg:'adfasdf'
+        },
+        methods: {
+            fn() {
+                console.log(this.$refs.msg.innerHTML)
+            }
+        }
+    })
+</script>
+</html>

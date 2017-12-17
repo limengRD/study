@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+    <script src="./lib/vue-router-v3.0.1.js"></script>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/login?id=10">login</router-link>
+        <router-link to="/register/12/xsxs">register</router-link>
+
+        <router-view></router-view>
+    </div>
+    <script>
+    const login = {
+        template: '<h3>login</h3>',
+        created() {
+            console.log(this.$route.query)
+        }
+    }
+
+    const register = {
+        props:['id','name'],
+        template: '<h3>register{{id}}{{name}}</h3>',
+        created() {
+            console.log(this.id)
+        }
+    }
+
+    const router = new VueRouter({
+        routes:[
+            {path: '/',component: login},
+            {path: '/login',component: login},
+            {path: '/register/:id/:name',component: register,props: true}
+        ]
+    })
+
+    const vm = new Vue({
+        el: '#app',
+        data: {},
+        methods: {},
+        router: router
+    })
+    </script>
+</body>
+</html>
