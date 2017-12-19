@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+    <script src="./lib/vue-router-v3.0.1.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <router-view name="top"></router-view>
+        <router-view name="bottom"></router-view>
+        <router-view name="left"></router-view>
+    </div>
+
+    <script>
+
+        const header = {
+            template: '<div>头</div>'
+        }
+
+        const footer = {
+            template: '<div>尾</div>'
+        }
+        
+        const navBar = {
+            template: '<div>导航</div>'
+        }
+
+        const router = new VueRouter({
+            routes:[
+                {path:'/',components:{
+                    'top': header,
+                    'bottom': footer,
+                    'left': navBar
+                }}
+            ]
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            },
+            router: router
+        })
+    </script>
+</body>
+</html>

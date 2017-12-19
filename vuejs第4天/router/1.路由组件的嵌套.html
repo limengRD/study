@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.5.9.js"></script>
+    <script src="./lib/vue-router-v3.0.1.js"></script>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/com1">跳转到组件1</router-link>
+        <router-link to="/com2">跳转到组件2</router-link>
+
+        <router-view></router-view>
+    </div>
+    <script>
+
+        const com1 = {
+            template: `<div>这是第一个组件
+            <router-link to="/com1/login">登录</router-link>
+            <router-link to="/com1/register">注册</router-link>
+            
+            <router-view></router-view>
+
+            </div>`
+        }
+
+        const com2 = {
+            template: '<div>这是第二个组件</div>'
+        }
+
+
+        const login = {
+            template:'<div>登录组件</div>'
+        }
+
+        const reg = {
+            template: '<div>注册组件</div>'
+        }
+
+        const router = new VueRouter({
+            routes:[
+                {path: '/com1',component: com1,children:[
+                    {path:'login',component: login},
+                    {path:'register',component: reg}
+                ]},
+                {path: '/com2', component:com2}
+            ]
+        })
+
+        const vm = new Vue({
+            el: "#app",
+            data: {},
+            methods: {},
+            router: router
+        })
+    </script>
+</body>
+</html>
