@@ -1,0 +1,478 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function closeWin() {
+            if(confirm('确定要退出吗?')) {
+                console.log(123);
+                window.close();
+            
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="关闭窗口" onclick="closeWin()">    
+</body>
+</html>  -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="aaa">
+    <input type="radio" name="aaa">
+    <input type="radio" name="aaa">
+    <input type="radio" name="aaa">
+    <input type="radio" name="aaa">
+    <input type="radio" name="aaa">
+    <input type="radio" name="aaa">    
+</body>
+<script>
+    var radio = document.getElementsByTagName('input');
+    
+    for(var i = 0; i < radio.length; i++) {
+        radio[i].onchange = (function(i) {
+            return function() {
+            alert(i+1);
+        }
+        })(i)
+        // if(radio[i].checked) {
+        //     alert(i+1);
+        // }
+    }
+</script>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="">
+    <select name="" id="select">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+    </select>
+</body>
+    <script>
+        var select = document.getElementById('select');
+        var option = select.children;
+        console.log(typeof option)
+        console.log(option)
+        select.onchange = function () {
+            for(var i = 0 ; i < option.length ; i++) {
+                if(option[i].selected) {
+                    console.log(option[i].innerHTML);
+                }
+            }
+        }
+    </script>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+    var length = 10;
+    function fn () {
+        alert(this.length);
+    }
+    var obj = {
+        length: 5,
+        method: function () {
+            fn();
+        }
+    }
+    obj.method();
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arr = [1,2,3,4,5,6];
+    console.log(arr.slice(-1,-2));
+</script>
+</html> -->
+
+
+
+<!-- 数组去重复 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <style>
+        div > span {
+            color: red;
+            font:italic bold 19px '微软雅黑';
+        }
+    </style> -->
+    <style>
+
+        a {
+            display: block;
+            width: 100px;
+            height: 40px;
+            background: red;
+            float: left;
+            line-height: 40px;
+            text-align: center;
+            margin-left: 20px;
+        }
+
+        div~div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        div:nth-child(3) {
+            display: none;
+        }
+        div:nth-child(4) {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        <span>aaa</span>
+    </div> -->
+    <!-- <iframe src="http://www.baidu.com" frameborder="0"></iframe> -->
+    <!-- <div class="box"></div> -->
+    <!-- <a href="a/abc?key=key">asdasd</a>
+    <form action="a/abc?key=key1"></form> -->
+    <div style="overflow:hidden">
+        <a href="javascript:;">1</a>
+        <a href="javascript:;">2</a>
+        <a href="javascript:;">3</a>    
+    </div>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</body>
+<!-- <script src="jquery.js"></script> -->
+<script>
+
+    // var btn = document.querySelectorAll('a');
+    // var box = document.querySelectorAll('.box');
+    // console.log(box)
+    // console.log(btn)
+    // for(var i = 0; i < btn.length; i++) {
+    //     btn[i].index = i;
+    //     btn[i].addEventListener('click',(function (a) {
+
+    //         console.log(a)
+    //        return function fn () {
+    //         console.log
+    //         for(var j = 0; j < box.length; j++) {
+    //             box[j].style.display = 'none';
+
+    //         }    
+    //             box[a].style.display = 'block'
+    //     }
+    //     })(i))
+
+    // }
+    // function fn () {
+    //     var a = 1;
+    // }
+    
+    // function fn1 () {
+    //     var a = 2;
+    // }
+
+    // var arr = [1,2,3,3,3,3,4,4,5,5,5,5,3,43,3,4,5,6,1,2,3,4,5,5,5,5,5,5,5,5];
+    
+    // Array.prototype.deleLike = function () {
+    //     var newArr = [arr[0]];
+        
+    //     for(var i = 1; i <= arr.length-2; i++) {
+    //         var onOff = true;
+    //         for(var j = 0; j <= newArr.length-1; j++) {
+    //             if(arr[i] == newArr[j]) {
+    //                 onOff = false;
+    //             }
+    //         }
+    //         if(onOff) {
+    //             newArr.push(arr[i]);
+    //         }
+    //     }
+
+    //     return newArr;
+    // }
+    // console.log(arr.deleLike());
+    
+
+
+    // var arr = [1,2,2,2,3,2,2,2,4,5,6,7,8];
+    // function fn (arr) {
+    //     arr.sort();
+    //     var newArr = [arr[0]];
+    //     for(var i = 1; i < arr.length; i++) {
+    //         if(arr[i] !== newArr[newArr.length-1]) {
+    //             newArr.push(arr[i]);
+    //         }
+    //     }
+    //     return newArr;
+    // }
+    // console.log(fn(arr));
+
+    
+    // var arr = [1,2,2,,32,2,2,2,4,5,6,7,8,8,8,8,8,8];
+    // Array.prototype.deleLike = function () {
+    //     for(var i = 0; i < arr.length; i++) {
+    //         for(var j = i+1; j < arr.length; j++) {
+    //             if(arr[i] == arr[j]) {
+    //                 arr.splice(j,1);
+    //                 j--;
+    //                 console.log(arr)
+    //             }
+    //         }
+    //     }
+    //     return arr;
+    // }
+    // console.log(arr.deleLike());
+
+
+    // var arr = [1,2,2,2,3,2,2,2,4,5,6,7,8,8,8,8,8,8];
+    
+    // Array.prototype.deleLike = function () {
+    //     var result = [];
+    //     this.forEach(function (value,index,arr) {
+    //         var onOff = arr.indexOf(value,index+1)
+    //         if(onOff == -1) {
+    //             result.push(value);
+    //         }
+    //     })
+    //     return result;
+    // }
+    // console.log(arr.deleLike());
+
+    // var arr = [1,2,2,2,3,2,2,2,4,5,6,7,8,8,8,8,8,8];
+    // Array.prototype.deleLike = function () {
+    //     var obj = {};
+    //     var newArr = [];
+    //     for(var i = 0; i < arr.length; i++) {
+    //         if(!obj[arr[i]]) {
+    //             obj[arr[i]] = 1;
+    //             newArr.push(arr[i]);
+    //         }else {
+    //             obj[arr[i]] ++;
+    //         }
+    //     }
+    //     return obj;
+
+    // }
+    // console.log(arr.deleLike());
+
+
+
+    // function SINA () {
+    //     return 1;
+    // }
+    // var SINA;
+    // console.log(typeof SINA)
+    // var name = 'aa'
+    // var sinaNews = {
+    //     name: 'aaa',
+    //     test:function () {
+    //         console.log(this.name);
+    //     }
+    // }
+    // setTimeout(sinaNews.test,500)
+
+
+    // function fn (a,b) {
+    //     console.log(123);
+    // }
+    // console.log(fn.length)
+    // function C1(name){
+    //     if(name) {
+    //         this.name = name;
+    //     }
+    // }
+    // function C2 (name) {
+    //     // this.name = name ;
+    // }
+    // function C3 (name) {
+    //     this.name = name || 'Jone';
+    // }
+    // C1.prototype.name = 'Tom';
+    // C2.prototype.name = 'Jim';
+    // C3.prototype.name = 'Jone';
+    // console.log(C2.prototype)
+    // console.log(new C1('David').name + ',' + new C2().name + ',' + new C3().name)
+
+
+    // var o = {};
+    // o.a = 0;
+    // b = o;
+    // b.a = 10;
+    // console.log(o.a);
+
+    // a = 10;
+    // (function (ex) {
+       
+
+    //     var a = 5;
+    //     // ex.a = 15;
+
+    // })(window) 
+
+    // console.log(a)
+// function b() {
+//     a = 10;
+// }
+// b();
+// console.log(a);
+
+    // function C1() {
+    //     this.name = name;
+    // }
+    
+    // function C2() {
+    //     this.name = name;
+    // }
+    // console.log(C1.prototype)
+
+    // function a () {}
+    // console.dir(a.__proto__);
+    // console.dir(a.__proto__.constructor);
+    // console.dir(Object.prototype);
+
+    // function a () {}
+    // console.dir(a.__proto__);//a的构造函数的原型,也就是Function的原型
+    // console.dir(a.__proto__.constructor);//a的构造函数Function
+    // console.dir(a.__proto__.constructor.prototype.__proto__);//a构造函数的原型指向Object的原型
+    // console.dir(Object.prototype);
+
+    // var foo = function (x) {
+    //     x++;
+    //     return function (y) {
+    //         return x+y;
+    //     }
+    // }
+    // arr = foo(5)(10)
+    // console.log(arr)
+
+
+    // String.prototype.fenge = function () {
+    //     return this.split('').join(' ');
+    // }
+    // var a = 'abcdefg';
+    // console.log(a.fenge());
+
+    // function fn (a,b,c,d) {
+    //     console.log(arguments);
+    // }
+    // fn(1,2,3,4,5);
+    // window.status = '已经选中 文本框';
+
+
+    // var box = document.getElementsByClassName('box')[0];
+
+    // var width = getComputedStyle(box).width;
+    // console.log(width)
+
+    // for(let i=1;i<=3;i++){
+
+    //        setTimeout(function(){  //改成立即执行函数
+    //            console.log(i);    
+    //        },1000);  
+    //         // (function(a) {console.log(a)})(i)
+    //     };
+    // function fun(){
+    //     this.a = 0;
+    //     this.b = function () {
+    //         alert(this.a)
+    //     }
+    // }
+
+    // fun.prototype = {
+    //     b: function() {
+    //         this.a =20;
+    //         alert(this.a)
+    //     },
+    //     c:function () {
+    //         this.a = 20;
+    //         alert(this.a)
+    //     }
+    // }
+    // var my_fun = new fun()
+    // my_fun.b()
+    // my_fun.c()
+    // var length = 10
+    // function fn() {
+    //     console.log(this)
+    // }
+    // var obj = {
+    //     length: 5,
+    //     method: function (fn) {
+    //         fn()
+    //         arguments[0]()
+    //     }
+    // }
+    // obj.method(fn)
+
+    // function User() {
+    //     this.name = 'vicfeel';
+    //     var age = 23;
+    //     this.sayAge = function () {
+    //         console.log('my age is ' + age)
+    //     }
+    // }
+    // var user = new User();
+    // console.log(user.name)
+    // console.log(user.age)
+    // user.sayAge()
+    
+    var str = ''
+    for(var i = 0 ; i < 1000 ; i++) {
+        setTimeout(function () {console.log(i)},0)
+        
+        str += '<div>1212</div>'
+        var body = document.getElementsByTagName('body')[0].innerHTML = str
+    }
+    console.log(str)
+</script>
+</html>
