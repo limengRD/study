@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    const map = {
+        1: {timer: 300, returnVal: "abc"},
+        2: {timer: 200, returnVal: "bcd"},
+    }
+    async function requestHandler(item) {
+        await request(item);
+    }
+    let arr = []
+    function request(item) {
+        while(arr.length) {
+            arr.unshift()()
+        }
+        let flag = true;
+        arr.push(function () {
+            flag = false;
+        });
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                app.innerHTML = item.returnVal;
+            }, item.timer);
+        })
+    }
+    for(let key in map) {
+    }
+</script>
+</html>

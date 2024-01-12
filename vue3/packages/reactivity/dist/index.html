@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="module">
+        import {reactive, effect,} from './reactivity.js';
+        // import {reactive, effect,computed} from '/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js'
+        const obj = {
+            name: 'lm', 
+            age: 18, 
+            get receviceName() {
+                //console.log(this,"this");
+                return this.name + '获取'
+            }
+        };
+
+        const state = reactive(obj);
+        console.log(state.name);
+        console.log(state.receviceName);
+        effect(() => {
+           app.innerHTML =  state.name
+        })
+
+        useEffect(()=>{
+
+        },[a])
+        // effect(() => {
+        //     console.log(state.name,state.age);
+        // })
+        // setTimeout(() => {
+        //     state.name = "mzlx"
+        // },2000);
+
+        // 异步渲染
+        // let isFlushing = false;
+        // let runner = effect(() => {
+        //     app.innerHTML = state.name;
+        //     console.log("run")
+        // },{
+        //     scheduler() {
+        //         if(!isFlushing) {
+        //             Promise.resolve().then(() => {
+        //                 runner();
+        //                 isFlushing = false;
+        //             })
+        //             isFlushing = true;
+        //         }
+        //     }
+        // })
+        // state.name = '1'e
+        // state.name = '2'
+        // state.name = '3'
+        // let relName = computed(() => {
+        //     console.log("computed")
+        //     return state.name + state.age;
+        // })
+        // effect(() => {
+        //     app.innerHTML = relName.value;
+        //     console.log(relName.value)
+        //     console.log(relName.value)
+        //     console.log(relName.value)
+        //     console.log(relName.value)
+        // })
+        // setTimeout(() => {
+        //     state.age = 1000000;
+        // },1000)
+        // const map = {
+        //     1: {timer: 300, returnVal: "abc"},
+        //     2: {timer: 200, returnVal: "bcd"},
+        // }
+        // watch(() => { return state.name},(newVal,oldVal) => {
+        //     console.log(newVal,oldVal)
+        // })
+        // state.name = "mzlx"
+    </script>
+</body>
+</html>
